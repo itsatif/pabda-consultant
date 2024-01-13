@@ -1,0 +1,62 @@
+<header class="header-area">
+  <div class="btn" (click)="toggleSidebar()">
+    <span class="material-icons nav-menu-lc"> menu </span>
+  </div>
+  <nav
+    class="sidebar"
+    [ngClass]="{ show: isSidebarVisible }"
+    (click)="onSidebarClick($event)"
+  >
+    <div class="text">Menu</div>
+    <ul>
+      <li class="active"><a href="index-new-1.html">Home</a></li>
+      <li><a href="#">Clients We Serve</a></li>
+      <li>
+        <a href="#" class="feat-btn"
+          >Services
+          <span class="fa fa-caret-down first"></span>
+        </a>
+
+        <ul class="feat-show">
+          <li><a href="#">Market Research</a></li>
+          <li><a href="#">Questionnaire Designing </a></li>
+          <li><a href="#">Survey Programming</a></li>
+          <li><a href="#">Data Processing</a></li>
+          <li><a href="#">Industries Reach</a></li>
+          <li><a href="#">Respondent Reach</a></li>
+          <li>
+            <a href="#" class="feat-btns"
+              >FieldWork
+              <span class="fa fa-caret-down firsts"></span>
+            </a>
+
+            <ul class="feat-shows">
+              <li><a href="#">Cati</a></li>
+              <li><a href="#">CAWI/Online</a></li>
+              <li><a href="#">Face to Face </a></li>
+              <li><a href="#"> In-depth Discussions</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="serv-btn"
+          >Resource Center
+          <span class="fa fa-caret-down second"></span>
+        </a>
+        <ul class="serv-show">
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Upcoming Events </a></li>
+          <li><a href="#">Downloadables(Reports)</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a class="butn" href="#">Join our Panel</a></li>
+    </ul>
+  </nav>
+  <div class="logo top-ll">
+    <a class="nav-brand" href="index.html"
+      ><img src="assets/pabda-logo.png" alt=""
+    /></a>
+  </div>
+</header>

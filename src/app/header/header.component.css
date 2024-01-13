@@ -1,0 +1,133 @@
+.header-area {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: auto;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.nav-menu-lc {
+  margin-top: 5px;
+  color: #fff;
+}
+
+.btn {
+  position: absolute;
+  top: 15px;
+  right: 45px;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  background: #29292961;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: right 0.4s ease;
+}
+
+.sidebar {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  right: -250px;
+  background: #1b1b1b;
+  transition: right 0.4s ease;
+  overflow-y: scroll;
+}
+
+.btn.click {
+  right: 250px;
+  position: fixed;
+}
+
+.sidebar.show {
+  right: 0px;
+}
+
+.sidebar {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  right: -250px;
+  background: #1b1b1b;
+  transition: right 0.4s ease;
+  overflow-y: scroll;
+}
+
+.sidebar .text {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: #1e1e1e;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  background: #1b1b1b;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+nav ul li {
+  line-height: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+ul li,
+ol li {
+  list-style: none;
+}
+
+nav ul li.active a {
+  color: cyan;
+  background: #1e1e1e;
+  border-left-color: cyan;
+}
+
+nav ul li a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding-left: 20px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav ul ul {
+  position: static;
+  display: none;
+}
+
+nav ul {
+  background: #1b1b1b;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+
+.logo.top-ll {
+  padding-left: 50px;
+  margin-top: 10px;
+}
+
+.nav-brand img {
+  width: 95px;
+}
