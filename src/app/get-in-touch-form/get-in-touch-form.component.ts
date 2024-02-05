@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,31 +10,27 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   imports: [ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatFormFieldModule],
+    MatFormFieldModule,
+  FormsModule],
   templateUrl: './get-in-touch-form.component.html',
-  styleUrl: './get-in-touch-form.component.css'
+  styleUrl: './get-in-touch-form.component.css',
+  encapsulation:ViewEncapsulation.None
 })
 export class GetInTouchFormComponent implements OnInit {
-  myForm: FormGroup;
+  getInTouchFormGroup:FormGroup = new FormGroup({
+    name:new FormControl('',[Validators.required]),
+    phoneNumber:new FormControl('',[Validators.required]),
+    email:new FormControl('',[Validators.email,Validators.required]),
+    query:new FormControl('',[Validators.required])
+})
 
   constructor(private fb: FormBuilder){}
 
-  ngOnInit(): void {
-    this.myForm = this.fb.group({
-      name: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      query: ['']
-    });
-  }
+  ngOnInit(): void {}
   
   onSubmit(): void {
-    if (this.myForm.valid) {
-      // Perform actions with form data (e.g., submit to a server)
-      console.log(this.myForm.value);
-    } else {
-      // Handle invalid form
-      alert('Please fill out all required fields with valid values.');
-    }
+    const formData = this.getInTouchFormGroup.value;
+    const formDataJson = JSON.parse(JSON.stringify(formData));
+    console.log(formDataJson);
   }
 }
