@@ -1,6 +1,6 @@
 <section
   class="breadcumb-area bg-img"
-  style="background-image: url(assets/img/inner-banner.jpg)"
+  style="background-image: url(assets/img/contact-banner.jpg)"
 >
   <div class="container h-100">
     <div class="row h-100 align-items-center">
@@ -17,150 +17,99 @@
       </div>
     </div>
   </div>
+  <div class="sound">
+    <span>Sound</span>
+    <div class="equalizer">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 </section>
 
-<div class="contact-page">
+<section class="contact-area">
   <div class="container">
-    <div class="container">
-      <div class="contact-top">
-        <div class="row">
-          <div class="col-md-4">
-            <div
-              class="address-item wow zoomIn"
+    <div class="row">
+      <div class="col-12 col-lg-5">
+        <div
+          class="content-sidebar wow fadeInUp"
+          data-wow-delay="0s"
+          style="visibility: visible; animation-delay: 0s"
+        >
+          <h6>- Contact With Us</h6>
+          <h3>Feel Free to Get in Touch</h3>
+          <p>
+            Give us a call or drop by anytime, we endeavour to answer all
+            enquiries within 24 hours on business days. We will be happy to
+            answer your questions.
+          </p>
+          <!-- Address -->
+          <div class="address mt-30">
+            <h6
+              class="wow zoomIn"
               data-wow-delay="0s"
               style="visibility: visible; animation-delay: 0s"
             >
-              <!-- <div class="icon-part">
-                       <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
-                    </div> -->
-              <img src="assets/img/ph1.png" />
-              <div class="address-text">
-                <h3>Phone Number</h3>
-                <p>Make a call for your general enquiries.</p>
-                <p><a href="tel123456789  ">123456789 </a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="address-item wow zoomIn"
+              <i class="fa fa-phone frr-ic" aria-hidden="true"></i> 123456789
+            </h6>
+            <h6
+              class="wow zoomIn"
               data-wow-delay="0s"
               style="visibility: visible; animation-delay: 0s"
             >
-              <!-- <div class="icon-part">
-                              <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                           </div> -->
-              <img src="assets/img/mm-1.png" />
-              <div class="address-text">
-                <h3>Email Address</h3>
-                <p>Send your mail for general enquiries.</p>
-                <p>
-                  <a href="mailto:sales@pabdaconsulting.com "
-                    >{{ "sales@pabdaconsulting.com" }}
-                  </a>
-                </p>
-              </div>
-            </div>
+              <i class="fa fa-envelope frr-ic" aria-hidden="true"></i>
+              sales&#64;pabdaconsulting.com
+            </h6>
+            <!-- <h6><i class="fa fa-map-marker frr-ic" aria-hidden="true"></i> abc, Noida, Uttar Pradesh-201305.</h6> -->
           </div>
-          <div class="col-md-4">
-            <div
-              class="address-item wow zoomIn"
-              data-wow-delay="0s"
-              style="visibility: visible; animation-delay: 0s"
-            >
-              <!-- <div class="icon-part">
-                      <i class="fa fa-map-marker" aria-hidden="true"></i>
-                   </div> -->
-              <img src="assets/img/ll-1.png" />
-              <div class="address-text">
-                <h3>Our Location</h3>
-                <p>View location for staying guests.</p>
-                <p>abc sector 123, Noida <br /></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="col-md-3 ">
-                   <div class="address-item">
-                       <div class="icon-part">
-                         <i class="fa fa-clock-o" aria-hidden="true"></i>
-                       </div>
-                       <div class="address-text">
-                          <h3>Hours Of Operation</h3>
-                          <p>8:00 AM - 5:00 PM Monday - Friday
-                              9:00 AM - 12:00 PM Saturdays</p>
-                       </div>
-                   </div>
-               </div> -->
         </div>
       </div>
-
-      <div class="main-form">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <form
-              class="contact-form wow fadeInLeft"
-              data-wow-delay="0s"
-              style="visibility: visible; animation-delay: 0s"
-            >
-              <div class="top-co">
-                <h6>Need Any Help</h6>
-                <h3>Let’s Talk! Send Your Message</h3>
+      <!-- Contact Form Area -->
+      <div class="col-12 col-lg-7">
+        <form class="contact-form wow fadeInLeft" data-wow-delay="0s" style="visibility: visible; animation-delay: 0s" [formGroup]="getInTouchFormGroup" (ngSubmit)="submitForm()">
+          <h3>Get In Touch</h3>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                  <input matInput type="text" id="name" placeholder="Name" formControlName="name">
+                </mat-form-field>
               </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="uname"
-                      placeholder=" Name"
-                      name="name"
-                      required=""
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="Phone-Number"
-                      placeholder="Phone "
-                      name="phone number"
-                      required=""
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <input
-                      id="Email"
-                      type="text"
-                      class="form-control sdr-frs"
-                      placeholder="Email"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <textarea
-                      class="form-control sdr-frs"
-                      id="message"
-                      name="message"
-                      placeholder="  Comments/Questions"
-                      required=""
-                    ></textarea>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <button type="submit" class="contact-btn">SUBMIT</button>
-                </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                  <input matInput type="tel" id="phoneNumber" placeholder="Phone Number" formControlName="phoneNumber">
+                </mat-form-field>
               </div>
-            </form>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                  <input matInput type="email" id="email" placeholder="Email" formControlName="email">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                  <input matInput type="text" id="address" placeholder="Address" formControlName="address">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="form-group">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                  <textarea matInput rows="5" id="query" placeholder="Your Query" formControlName="query"></textarea>
+                </mat-form-field>
+              </div>
+              <button type="submit" class="contact-btn" [disabled]="!getInTouchFormGroup.valid">Send Message</button>
+            </div>
           </div>
-        </div>
+        </form>
+        
       </div>
     </div>
   </div>
-</div>
+</section>

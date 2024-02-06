@@ -10,7 +10,10 @@ import { Component, ElementRef, HostListener } from '@angular/core';
 })
 export class HeaderComponent {
   isSidebarVisible = false;
-  constructor(private el: ElementRef) {}
+  isNavList: boolean[] = new Array<boolean>();
+  constructor(private el: ElementRef) {
+    this.isNavList.fill(false, 0, 5);
+  }
 
   /**
    * @description Close sidebar when clicking outside of it
@@ -30,5 +33,9 @@ export class HeaderComponent {
   }
   toggleSidebar() {
     this.isSidebarVisible = !this.isSidebarVisible;
+  }
+
+  openNavList(index: number): void {
+    this.isNavList[index] = !this.isNavList[index];
   }
 }
