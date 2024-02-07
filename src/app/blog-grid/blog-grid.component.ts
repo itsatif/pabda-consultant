@@ -1,18 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { convertKebabCaseToTitleCase } from '../../utils/common.utils';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { convertIso8601ToLocalDate } from '../../utils/common.utils';
 
 @Component({
-  selector: 'app-blog-details',
+  selector: 'app-blog-grid',
   standalone: true,
-  imports: [],
-  templateUrl: './blog-details.component.html',
-  styleUrl: './blog-details.component.css',
+  imports: [CommonModule],
+  templateUrl: './blog-grid.component.html',
+  styleUrl: './blog-grid.component.css'
 })
-export class BlogDetailsComponent implements OnInit{
+export class BlogGridComponent {
+
   blogData = [
     {
       id: 1,
+      date:'2024-02-07T09:00:38.119Z',
+      imgSrc:'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-2.jpg',
       slug:"strategies-for-expanding-your-businesss-industries-reach-and-breaking-barriers",
       content: `<div class="blog-image">
   <img class="img-responsive" src="http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-2.jpg" />
@@ -119,6 +122,8 @@ export class BlogDetailsComponent implements OnInit{
     },
     {
       id:2,
+      date:'2024-02-07T09:00:38.119Z',
+      imgSrc:'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-3.jpg',
       slug:"a-guide-to-effective-survey-programming-to-navigate-the-digital-space",
       content:`<div class="blog-image">
       <img class="img-responsive" src="http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-3.jpg" />
@@ -177,6 +182,8 @@ export class BlogDetailsComponent implements OnInit{
     },
     {
       id:3,
+      date:'2024-02-07T09:00:38.119Z',
+      imgSrc:'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-1.jpg',
       slug:"what-impact-does-comprehensive-market-research-have-on-decision-making",
       content:`<div class="blog-image">
       <img class="img-responsive" src="http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-1.jpg" />
@@ -242,13 +249,16 @@ export class BlogDetailsComponent implements OnInit{
     }
   ];
 
-  selectedBlog:any = {};
-  constructor(private route:ActivatedRoute){}
-  ngOnInit(): void {
-    this.route.params.subscribe((param)=>{
-      if(param?.['blogTitle']){
-        this.selectedBlog = this.blogData.find((blog)=> blog.slug === param['blogTitle']);
-      }
-    });
+  extractTitle(content: string): string {
+    return content.match(/<h3>([\s\S]*?)<\/h3>/)[1];
+  }
+
+  extractIntro(content: string): string {
+    const intro = content.match(/<p>([\s\S]*?)<\/p>/)[1];
+    return intro.length > 50 ? intro.slice(0, 100) + '...' : intro;
+  }
+
+  transformDate(date:any):string{
+    return convertIso8601ToLocalDate(date);
   }
 }
