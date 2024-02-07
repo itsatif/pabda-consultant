@@ -1,31 +1,48 @@
 <div class="ftr-1a">
-    <form [formGroup]="getInTouchFormGroup">
-      <div class="form-group">
-        <mat-form-field appearance="fill">
-          <mat-label>Name</mat-label>
-          <input matInput formControlName="name" formControlName="name"/>
-        </mat-form-field>
-      </div>
-      <div class="form-group">
-        <mat-form-field appearance="fill">
-          <mat-label>Phone Number</mat-label>
-          <input matInput formControlName="phoneNumber" formControlName="phoneNumber"/>
-        </mat-form-field>
-      </div>
-      <div class="form-group">
-        <mat-form-field appearance="fill">
-          <mat-label>Email ID</mat-label>
-          <input matInput formControlName="email" formControlName="email"/>
-        </mat-form-field>
-      </div>
-      <div class="form-group">
-        <mat-form-field appearance="fill">
-          <mat-label>Your Query</mat-label>
-          <textarea matInput formControlName="query" rows="2" formControlName="query"></textarea>
-        </mat-form-field>
-      </div>
-      <div class="form-group">
-        <button class="submit" mat-raised-button type="submit" (click)="onSubmit()" [disabled]="getInTouchFormGroup.invalid">Submit</button>
-      </div>
-    </form>
-  </div>
+  <form [formGroup]="getInTouchFormGroup">
+    <div class="form-group" style="margin-bottom: 0 !important">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" formControlName="name" />
+      </mat-form-field>
+    </div>
+    <div class="form-group" style="margin-bottom: 0 !important">
+      <mat-form-field appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input
+          matInput
+          formControlName="phoneNumber"
+          formControlName="phoneNumber"
+        />
+      </mat-form-field>
+    </div>
+    <div class="form-group" style="margin-bottom: 0 !important">
+      <mat-form-field appearance="fill">
+        <mat-label>Email ID</mat-label>
+        <input matInput formControlName="email" formControlName="email" />
+      </mat-form-field>
+    </div>
+    <div class="form-group" style="margin-bottom: 0 !important">
+      <mat-form-field appearance="fill">
+        <mat-label>Your Query</mat-label>
+        <textarea
+          matInput
+          formControlName="query"
+          rows="2"
+          formControlName="query"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <div class="form-group" style="margin-bottom: 0 !important">
+      <button
+        class="submit"
+        mat-raised-button
+        type="submit"
+        (click)="onSubmit()"
+        [disabled]="getInTouchFormGroup.invalid"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
