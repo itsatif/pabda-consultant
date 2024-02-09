@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -16,10 +16,16 @@ import { isPlatformBrowser } from '@angular/common';
 export class AppComponent implements OnInit{
   title = 'pabda-consultant';
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object){}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,private elementRef: ElementRef){}
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       // new WOW().init();
     }
+  }
+  scrollToTop(): void {
+    this.elementRef.nativeElement.ownerDocument.defaultView.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 }

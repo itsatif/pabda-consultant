@@ -20,12 +20,19 @@
             </p>
 
             <div class="footer-widget-area cc-fa">
+              <!--                                     
+                              <div class="widget links-widget ">
+                                  <h6  class="widget-title">Contact Us</h6>
+                              </div> -->
+
               <div class="address">
+                <!-- <h6><i class="fa fa fa-loCATIon-arrow sdr-ics" aria-hidden="true"></i> 526 E Juanita Ave, Ste 4, Mesa, AZ 85204</h6>
+                                  <h6><a href="tel:480-353-2950 "><i class="fa fa-phone sdr-ics" aria-hidden="true"></i> 480-353-2950   </a>  </h6> -->
                 <h6>
-                  <a href="mailto:sales@pabdaconsulting.com"
-                    ><i class="fas fa-envelope sdr-ics" aria-hidden="true"></i>
-                    {{ "sales@pabdaconsulting.com" }}</a
-                  >
+                  <a href="mailto: sales@pabdaconsulting.com   "
+                    ><i class="fa fa-envelope sdr-ics" aria-hidden="true"></i>
+                    sales&#64;pabdaconsulting.com
+                  </a>
                 </h6>
               </div>
             </div>
@@ -76,7 +83,56 @@
               <h6 class="widget-title">Get In Touch</h6>
             </div>
             <div class="ftr-1a">
-              <app-get-in-touch-form></app-get-in-touch-form>
+              <form #myForm="ngForm" (ngSubmit)="submitForm(myForm)">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control sdr-frs"
+                    placeholder="Name"
+                    [(ngModel)]="formData.name"
+                    name="name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control sdr-frs"
+                    placeholder="Phone Number"
+                    [(ngModel)]="formData.phoneNumber"
+                    name="phoneNumber"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control sdr-frs"
+                    placeholder="Email ID"
+                    [(ngModel)]="formData.email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    rows="2"
+                    placeholder="Your Query"
+                    [(ngModel)]="formData.query"
+                    name="query"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <input
+                    style="font-size: 14px"
+                    type="submit"
+                    class="btn btn-green ftr-btn1"
+                    value="Submit"
+                    [disabled]="!myForm.valid"
+                  />
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -87,7 +143,7 @@
   <!-- Copywrite Text -->
   <div class="copywrite-text d-flex align-items-center justify-content-center">
     <p>
-      Copyright &copy; 2024 PABDA Consulting All rights reserved | Designed and
+      Copyright © 2024 PABDA Consulting All rights reserved | Designed and
       Developed by
       <a href="https://brandhype.in/" target="_blank">Brandhype.in</a>
     </p>

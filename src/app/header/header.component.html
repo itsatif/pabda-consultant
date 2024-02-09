@@ -2,6 +2,9 @@
   <div class="btn" (click)="toggleSidebar()">
     <span class="material-icons nav-menu-lc"> menu </span>
   </div>
+  <div class="btn click" *ngIf="isSidebarVisible" (click)="toggleSidebar()">
+    <span class="fa fa-bars"></span>
+  </div>
   <nav
     class="sidebar"
     [ngClass]="{ show: isSidebarVisible }"

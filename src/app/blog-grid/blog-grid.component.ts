@@ -14,7 +14,7 @@ export class BlogGridComponent {
   blogData = [
     {
       id: 1,
-      date:'2024-02-07T09:00:38.119Z',
+      date:'2023-12-08T09:00:38.119Z',
       imgSrc:'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-2.jpg',
       slug:"strategies-for-expanding-your-businesss-industries-reach-and-breaking-barriers",
       content: `<div class="blog-image">
@@ -122,7 +122,7 @@ export class BlogGridComponent {
     },
     {
       id:2,
-      date:'2024-02-07T09:00:38.119Z',
+      date:'2024-01-12T09:00:38.119Z',
       imgSrc:'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-3.jpg',
       slug:"a-guide-to-effective-survey-programming-to-navigate-the-digital-space",
       content:`<div class="blog-image">

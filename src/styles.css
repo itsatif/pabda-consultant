@@ -244,7 +244,7 @@ img {
   color: #fff !important;
 }
 .header-area {
-  position: absolute;
+  position: fixed;
   z-index: 10000;
   width: 100%;
   height: auto;
@@ -869,12 +869,12 @@ img {
   text-transform: uppercase;
 }
 .get-in h3 {
-  margin: 0;
-  font-weight: 700;
-  color: #fff;
-  font-size: 30px;
-  line-height: 43px;
-  margin-bottom: 10px;
+  margin: 0 !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  font-size: 30px !important;
+  line-height: 43px !important;
+  margin-bottom: 10px !important;
 }
 .all-courses {
   text-align: center;
@@ -1707,8 +1707,12 @@ nav ul li a span.rotate {
   z-index: 9999999;
   position: relative;
 }
+
 .client-we .display-3 {
-  color: #fff;
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: #fff !important;
   margin-bottom: 30px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
@@ -2077,14 +2081,14 @@ nav ul li a span.rotate {
   margin-bottom: 30px;
 }
 .contact-form .form-control {
-  border: 1px solid #dee1ec;
-  box-shadow: none;
-  padding: 25px 20px;
-  display: block;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
+  border: 1px solid #dee1ec !important;
+  box-shadow: none !important;
+  padding: 25px 20px !important;
+  display: block !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
 }
 .contact-form textarea.form-control {
   height: 88px !important;
@@ -6900,23 +6904,23 @@ output {
   color: #555;
 }
 .form-control {
-  display: block;
-  width: 100%;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  display: block !important;
+  width: 100% !important;
+  height: 34px !important;
+  padding: 6px 12px !important;
+  font-size: 14px !important;
+  line-height: 1.42857143 !important;
+  color: #555 !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
   -webkit-transition: border-color ease-in-out 0.15s,
     -webkit-box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s !important;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s !important;
 }
 .form-control:focus {
   border-color: #66afe9;
