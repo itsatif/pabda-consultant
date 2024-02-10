@@ -1,27 +1,41 @@
-import {AfterViewInit, Component, ElementRef, Inject, Renderer2, ViewChild,} from '@angular/core';
-import {CarouselModule} from 'ngx-owl-carousel-o';
-import {BlogGridComponent} from '../blog-grid/blog-grid.component';
-import {WowService} from '../shared-services/wow.service';
-import {HapticFeedbackDirective} from '../../directives/haptic-feedback.directive';
-import {interval, takeWhile} from 'rxjs';
-import {RouterLink} from '@angular/router';
-
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Inject,
+  PLATFORM_ID,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BlogGridComponent } from '../blog-grid/blog-grid.component';
+import { WowService } from '../shared-services/wow.service';
+import { HapticFeedbackDirective } from '../../directives/haptic-feedback.directive';
+import { interval, takeWhile } from 'rxjs';
+import { RouterLink } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselModule, BlogGridComponent, HapticFeedbackDirective, RouterLink],
+  imports: [
+    CarouselModule,
+    BlogGridComponent,
+    HapticFeedbackDirective,
+    RouterLink,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements AfterViewInit {
   isSoundOn: boolean = false;
+  source: AudioBufferSourceNode | null = null;
   counters: any[] = [
-    {business: 1, max: 50},
-    {happyClients: 1, max: 100},
-    {respondents: 1, max: 8},
-    {surveys: 1, max: 6},
+    { business: 1, max: 50 },
+    { happyClients: 1, max: 100 },
+    { respondents: 1, max: 8 },
+    { surveys: 1, max: 6 },
   ];
 
   barsHeight = [
@@ -37,19 +51,17 @@ export class HomeComponent implements AfterViewInit {
 
   constructor(
     @Inject(WowService) private wowService: WowService,
+    @Inject(PLATFORM_ID) private platformId: Object,
     private renderer: Renderer2
-  ) {
-  }
+  ) {}
 
   ngAfterViewInit(): void {
     this.wowService.initWow();
-    this.playOSSound();
-    this.equalizerAnimation('.equalizer', 180, this.barsHeight);
-    this.initializeOwlCarousel();
-  }
-
-  randomBetween(min: number, max: number): number {
-    return min + Math.random() * (max - min);
+    if (isPlatformBrowser(this.platformId)) {
+      this.initializeOwlCarousel();
+      this.playOSSound();
+      this.equalizerAnimation('.equalizer', 180, this.barsHeight);
+    }
   }
 
   increaseCounters() {
@@ -84,14 +96,13 @@ export class HomeComponent implements AfterViewInit {
     if (!equalizer) return;
 
     let animationInterval: NodeJS.Timeout;
-
+    function randomBetween(min: number, max: number): number {
+      return min + Math.random() * (max - min);
+    }
     function animateBars(): void {
       const spans = equalizer.querySelectorAll('span');
       spans.forEach((span, idx) => {
-        const height = this.randomBetween(
-          barsHeight[idx][0],
-          barsHeight[idx][1]
-        );
+        const height = randomBetween(barsHeight[idx][0], barsHeight[idx][1]);
         (span as HTMLElement).style.height = `${height}px`;
       });
     }
@@ -110,13 +121,18 @@ export class HomeComponent implements AfterViewInit {
 
     animationInterval = setInterval(animateBars.bind(this), speed);
 
-    equalizer.addEventListener('click', function () {
+    equalizer.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
       equalizer.classList.toggle('paused');
       if (equalizer.classList.contains('paused')) {
         stopAnimation();
+        this.isSoundOn = false;
       } else {
         startAnimation();
+        this.isSoundOn = true;
       }
+      this.playOSSound();
     });
   }
 
@@ -124,24 +140,47 @@ export class HomeComponent implements AfterViewInit {
    * @description Plays system sound for macOS.
    */
   playOSSound(): void {
-    const audio: HTMLAudioElement = new Audio('assets/img/audio-new-11.mp3');
-    this.isSoundOn = !this.isSoundOn;
+    const audioContext = new AudioContext();
+    const audioUrl = 'assets/img/audio-new-11.mp3';
+
     if (this.isSoundOn) {
-      audio.play().then().catch();
-      audio.volume = 1;
+      this.isSoundOn = false;
+      fetch(audioUrl)
+        .then((response) => response.arrayBuffer())
+        .then((buffer) => audioContext.decodeAudioData(buffer))
+        .then((decodedData) => {
+          this.source = audioContext.createBufferSource();
+          this.source.buffer = decodedData;
+          this.source.connect(audioContext.destination);
+          this.source.start(0);
+        })
+        .catch((error) => {
+          console.error('Error loading and decoding audio:', error);
+        });
     } else {
-      audio.pause();
-      audio.volume = 0;
-      this.equalizerAnimation('.equalizer', 180, this.barsHeight);
+      this.isSoundOn = true;
+      if (this.source) {
+        this.source.stop();
+      }
     }
   }
 
   initializeOwlCarousel(): void {
     const animatedEl: any = document.querySelectorAll('.owl-stage');
-    const counterList: number[] = [2160, 2880, 3600];
+    const owlItem: any = document.querySelectorAll('.owl-item');
+    const screenSize: number =
+      window.innerWidth > 720 ? 720 : window.innerWidth;
+    const width: number = screenSize * 7;
+    const counterList: number[] = [3, 4, 5].map((it) => it * screenSize);
+    owlItem.forEach((item) => {
+      if (item?.style) {
+        item.style.width = screenSize + 'px';
+      }
+    });
     animatedEl.forEach((node) => {
       if (node?.style) {
         let counterIndex = 0;
+        node.style.width = width + 'px';
         setInterval(() => {
           if (counterIndex < counterList.length) {
             node.style.transform = `translate3d(-${counterList[counterIndex]}px, 0px, 0px)`;
