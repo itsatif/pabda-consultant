@@ -18,7 +18,6 @@ export class ClientWeServeComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.playOSSound();
     this.equalizerAnimation('.equalizer', 180, this.barsHeight);
   }
 

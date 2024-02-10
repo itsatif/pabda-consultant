@@ -41,7 +41,6 @@ export class UpcomingEventsComponent implements OnInit{
 
   ngOnInit(): void {
     this.equalizerAnimation('.equalizer', 180, this.barsHeight);
-    this.playOSSound();
   }
 
   randomBetween(min: number, max: number): number {

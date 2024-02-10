@@ -131,7 +131,7 @@ export class HomeComponent implements AfterViewInit {
   playOSSound(): void {
     const audio: HTMLAudioElement = new Audio('assets/img/audio-new-11.mp3');
     this.isSoundOn = !this.isSoundOn;
-    audio.volume = this.isSoundOn ? 0 : 0;
+    audio.volume = this.isSoundOn ? 1 : 0;
     if (this.isSoundOn) {
       audio.play().then().catch();
     } else {
