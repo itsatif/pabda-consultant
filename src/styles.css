@@ -3013,7 +3013,7 @@ date {
 .sound {
   position: absolute;
   right: 40px;
-  bottom: 70px;
+  bottom: 95px;
   z-index: 3;
 }
 .sound span {
@@ -3056,7 +3056,7 @@ date {
   background-position: 34% 60%;
 }
 .banner-section {
-  padding-top: 100px;
+  padding-top: 80px;
 }
 .main-box {
   background: #eef1f7 url(assets/img/about-blog-abstract.png);
@@ -3455,7 +3455,7 @@ date {
     padding-left: 0;
   }
   .amts {
-    height: 150px;
+    height: 200px;
   }
   .our-testimonials-area .top-title h2 {
     text-align: center;
@@ -4037,7 +4037,7 @@ date {
   }
   .sound {
     right: 30px;
-    top: 300px;
+    top: 375px;
   }
   .banner-section {
     padding-top: 67px;

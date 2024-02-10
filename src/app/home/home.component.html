@@ -13,7 +13,7 @@
                 style="
                   transition: all 1s ease 0s;
                   width: 5040px;
-                  transform: translate3d(-2880px, 0px, 0px);
+                  transform: translate3d(-3600px, 0px, 0px);
                 "
               >
                 <div
@@ -297,7 +297,7 @@
               <div
                 class="owl-stage"
                 style="
-                  transform: translate3d(-2880px, 0px, 0px);
+                  transform: translate3d(-3600px, 0px, 0px);
                   transition: all 1s ease 0s;
                   width: 5040px;
                 "
@@ -802,7 +802,7 @@
 </section>
 
 <!--banner bottom-->
-<div class="services-area area-padding">
+<div class="services-area area-padding" (mouseenter)="increaseCounters()" (mouseleave)="increaseCounters()">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -841,7 +841,11 @@
                 />
               </div>
               <h4>
-                <b><span class="counter">50</span>+</b> Business Ideas
+                <b
+                  ><span class="counter">{{counters[0]?.['business']}}</span
+                  >+</b
+                >
+                Business Ideas
               </h4>
             </div>
           </div>
@@ -863,7 +867,11 @@
                 />
               </div>
               <h4>
-                <b><span class="counter">100</span>+</b> Happy CLIENTS
+                <b
+                  ><span class="counter">{{counters[1]?.['happyClients']}}</span
+                  >+</b
+                >
+                Happy CLIENTS
               </h4>
             </div>
           </div>
@@ -885,7 +893,11 @@
                 />
               </div>
               <h4>
-                <b><span class="counter">8</span>M+</b> Respondents
+                <b
+                  ><span class="counter">{{counters[2]?.['respondents']}}</span
+                  >M+</b
+                >
+                Respondents
               </h4>
             </div>
           </div>
@@ -907,7 +919,11 @@
                 />
               </div>
               <h4>
-                <b><span class="counter">6</span>M+</b> SURVEYS COMPLETED
+                <b
+                  ><span class="counter">{{counters[3]?.['surveys']}}</span
+                  >M+</b
+                >
+                SURVEYS COMPLETED
               </h4>
             </div>
           </div>
@@ -950,7 +966,7 @@
           market research including hypothesis generation, survey programming,
           data collection, and data processing.
         </p>
-        <div class="view">
+        <div class="view" href="client-we-serve">
           <a href="client-we-serve">Know more</a>
         </div>
       </div>
@@ -1001,6 +1017,7 @@
           class="thm-btn"
           data-toggle="modal"
           data-target="#myModal"
+          routerLink="contact-us"
         >
           <span>Contact Now</span>
         </button>
@@ -1025,7 +1042,7 @@
         </div>
       </div>
     </div>
-    <h1 style="text-align: center;">No Reviews Yet</h1>
+    <h1 style="text-align: center">No Reviews Yet</h1>
     <div class="row">
       <div class="col-12">
         <div

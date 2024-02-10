@@ -1,19 +1,35 @@
-import { Component, ElementRef, Inject, OnInit, Renderer2, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Inject,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BlogGridComponent } from '../blog-grid/blog-grid.component';
 import { WowService } from '../shared-services/wow.service';
 import { HapticFeedbackDirective } from '../../directives/haptic-feedback.directive';
+import { interval, takeWhile } from 'rxjs';
+import { RouterLink } from '@angular/router';
 declare var $: any;
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselModule, BlogGridComponent, HapticFeedbackDirective],
+  imports: [CarouselModule, BlogGridComponent, HapticFeedbackDirective,RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements AfterViewInit {
   isSoundOn: boolean = false;
+  counters: any[] = [
+    { business: 1, max: 50 },
+    { happyClients: 1, max: 100 },
+    { respondents: 1, max: 8 },
+    { surveys: 1, max: 6 },
+  ];
+
   barsHeight = [
     [2, 13],
     [5, 22],
@@ -23,15 +39,45 @@ export class HomeComponent implements OnInit {
   ];
   @ViewChild('heroSlides') heroSlides: ElementRef;
   interval: any;
-  constructor(@Inject(WowService) private wowService: WowService,private renderer: Renderer2) {}
-  ngOnInit(): void {
+  duration = 5000;
+
+  constructor(
+    @Inject(WowService) private wowService: WowService,
+    private renderer: Renderer2
+  ) {}
+
+  ngAfterViewInit(): void {
     this.wowService.initWow();
     this.playOSSound();
     this.equalizerAnimation('.equalizer', 180, this.barsHeight);
+    this.initializeOwlCarousel();
   }
 
   randomBetween(min: number, max: number): number {
     return min + Math.random() * (max - min);
+  }
+
+  increaseCounters() {
+    const startTime = new Date().getTime();
+    const stepSize = this.duration / 100;
+
+    interval(stepSize)
+      .pipe(takeWhile(() => new Date().getTime() - startTime < this.duration))
+      .subscribe(() => {
+        this.counters = this.counters.map((counter) => {
+          Object.keys(counter).forEach((key) => {
+            if (key !== 'max') {
+              const currentValue = counter[key];
+              const maxValue = counter.max;
+              const increment = Math.ceil(maxValue / 100);
+              if (currentValue < maxValue) {
+                counter[key] = Math.min(currentValue + increment, maxValue);
+              }
+            }
+          });
+          return counter;
+        });
+      });
   }
 
   equalizerAnimation(
@@ -85,7 +131,7 @@ export class HomeComponent implements OnInit {
   playOSSound(): void {
     const audio: HTMLAudioElement = new Audio('assets/img/audio-new-11.mp3');
     this.isSoundOn = !this.isSoundOn;
-    audio.volume = this.isSoundOn ? 1 : 0;
+    audio.volume = this.isSoundOn ? 0 : 0;
     if (this.isSoundOn) {
       audio.play().then().catch();
     } else {
@@ -95,57 +141,20 @@ export class HomeComponent implements OnInit {
   }
 
   initializeOwlCarousel(): void {
-    if ($.fn.owlCarousel) {
-      const welcomeSlide = $(this.heroSlides.nativeElement);
-
-      welcomeSlide.owlCarousel({
-        items: 1,
-        margin: 0,
-        loop: true,
-        nav: true,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        smartSpeed: 1000
-      });
-
-      welcomeSlide.on('translate.owl.carousel', () => {
-        const slideLayer = $('[data-animation]', this.heroSlides.nativeElement);
-        slideLayer.each((index, element) => {
-          this.renderer.removeClass(element, 'animated ' + element.dataset.animation);
-          this.renderer.setStyle(element, 'opacity', '0');
-        });
-      });
-
-      welcomeSlide.on('translated.owl.carousel', () => {
-        const activeSlide = $('.owl-item.active', this.heroSlides.nativeElement);
-        const slideLayer = $('[data-animation]', activeSlide);
-        slideLayer.each((index, element) => {
-          this.renderer.addClass(element, 'animated ' + element.dataset.animation);
-          this.renderer.setStyle(element, 'opacity', '1');
-        });
-      });
-
-      $('[data-delay]', this.heroSlides.nativeElement).each((index, element) => {
-        const animDelay = element.dataset.delay;
-        this.renderer.setStyle(element, 'animation-delay', animDelay);
-      });
-
-      $('[data-duration]', this.heroSlides.nativeElement).each((index, element) => {
-        const animDuration = element.dataset.duration;
-        this.renderer.setStyle(element, 'animation-duration', animDuration);
-      });
-
-      const dot = $('.hero-slides .owl-dot', this.heroSlides.nativeElement);
-      dot.each((index, element) => {
-        const dotNumber = index + 1;
-        if (dotNumber <= 9) {
-          $(element).html('0').append(dotNumber);
-        } else {
-          $(element).html(dotNumber);
-        }
-      });
-    }
+    const animatedEl: any = document.querySelectorAll('.owl-stage');
+    const counterList: number[] = [2160, 2880, 3600];
+    animatedEl.forEach((node) => {
+      if (node?.style) {
+        let counterIndex = 0;
+        setInterval(() => {
+          if (counterIndex < counterList.length) {
+            node.style.transform = `translate3d(-${counterList[counterIndex]}px, 0px, 0px)`;
+            counterIndex++;
+          } else {
+            counterIndex = 0;
+          }
+        }, 2000);
+      }
+    });
   }
 }
