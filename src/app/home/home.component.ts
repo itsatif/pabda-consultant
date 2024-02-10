@@ -126,11 +126,12 @@ export class HomeComponent implements AfterViewInit {
   playOSSound(): void {
     const audio: HTMLAudioElement = new Audio('assets/img/audio-new-11.mp3');
     this.isSoundOn = !this.isSoundOn;
-    audio.volume = this.isSoundOn ? 1 : 0;
     if (this.isSoundOn) {
       audio.play().then().catch();
+      audio.volume = 1;
     } else {
       audio.pause();
+      audio.volume = 0;
       this.equalizerAnimation('.equalizer', 180, this.barsHeight);
     }
   }

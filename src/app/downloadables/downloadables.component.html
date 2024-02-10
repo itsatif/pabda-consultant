@@ -17,12 +17,6 @@
       </div>
     </div>
   </div>
-  <div class="sound">
-    <span>Sound</span>
-    <div class="equalizer">
-      <span></span> <span></span> <span></span> <span></span>
-    </div>
-  </div>
 </section>
 <!-- ##### Blog Area ##### -->
 <div class="blog-page upcoming op-ev">
@@ -35,7 +29,7 @@
         >
           <div class="media-bx">
             <div class="md-img">
-              <img [src]="download.image"/>
+              <img [src]="download.image" />
             </div>
             <div class="md-content">
               <h3>{{ download.title }}</h3>
@@ -53,8 +47,8 @@
       </ng-container>
       <ng-template #noDownloads>
         <div class="col-md-12 text-center">
-          <p style="font-size: 32px; font-weight: 500">
-            Nothing Available for Downloads
+          <p class="no-data-text">
+            We will shortly upload the data for downloading
           </p>
         </div>
       </ng-template>
