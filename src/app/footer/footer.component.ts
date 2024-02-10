@@ -32,7 +32,9 @@ export class FooterComponent {
         duration: 3000,
       });
     } else {
-      console.error('Invalid form');
+      this.snackBar.open('Please fill all the details in form', 'OK', {
+        duration: 3000,
+      });
     }
   }
 }

@@ -41,7 +41,13 @@
           <li><a href="#">Industries Reach</a></li>
           <li><a href="#">Respondent Reach</a></li>
           <li>
-            <a href="#" class="feat-btns"
+            <a
+              class="feat-btns"
+              (click)="
+                $event.stopPropagation();
+                $event.preventDefault();
+                openNavList(1)
+              "
               >FieldWork
               <span
                 [ngClass]="[

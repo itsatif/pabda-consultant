@@ -2544,9 +2544,9 @@ nav ul li a span.rotate {
   border: #518494 3px double;
 }
 .whsr-box .wh-content h4 {
-  color: cyan;
+  color: cyan !important;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 .whsr-box .wh-content p {
   font-size: 16px;
