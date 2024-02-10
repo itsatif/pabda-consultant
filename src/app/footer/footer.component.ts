@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { GetInTouchFormComponent } from '../get-in-touch-form/get-in-touch-form.component';
-import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import {Component} from '@angular/core';
+import {GetInTouchFormComponent} from '../get-in-touch-form/get-in-touch-form.component';
+import {FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-footer',
@@ -24,7 +24,10 @@ export class FooterComponent {
     email: '',
     query: '',
   };
-  constructor(private snackBar: MatSnackBar) {}
+
+  constructor(private snackBar: MatSnackBar) {
+  }
+
   submitForm(form: NgForm) {
     if (form.valid) {
       console.log('Form submitted:', this.formData);

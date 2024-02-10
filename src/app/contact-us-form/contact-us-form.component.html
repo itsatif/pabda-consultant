@@ -58,7 +58,7 @@
               data-wow-delay="0s"
               style="visibility: visible; animation-delay: 0s"
             >
-              <i class="fa fa-envelope frr-ic" aria-hidden="true"></i>
+              <i aria-hidden="true" class="fa fa-envelope frr-ic"></i>
               sales&#64;pabdaconsulting.com
             </h6>
             <!-- <h6><i class="fa fa-map-marker frr-ic" aria-hidden="true"></i> abc, Noida, Uttar Pradesh-201305.</h6> -->
@@ -67,48 +67,49 @@
       </div>
       <!-- Contact Form Area -->
       <div class="col-12 col-lg-7">
-        <form class="contact-form wow fadeInLeft" data-wow-delay="0s" style="visibility: visible; animation-delay: 0s" [formGroup]="getInTouchFormGroup" (ngSubmit)="submitForm()">
+        <form (ngSubmit)="submitForm()" [formGroup]="getInTouchFormGroup" class="contact-form wow fadeInLeft"
+              data-wow-delay="0s" style="visibility: visible; animation-delay: 0s">
           <h3>Get In Touch</h3>
           <div class="row">
             <div class="col-lg-6">
               <div class="form-group">
                 <mat-form-field appearance="outline" style="width: 100%;">
-                  <input matInput type="text" id="name" placeholder="Name" formControlName="name">
+                  <input formControlName="name" id="name" matInput placeholder="Name" type="text">
                 </mat-form-field>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
                 <mat-form-field appearance="outline" style="width: 100%;">
-                  <input matInput type="tel" id="phoneNumber" placeholder="Phone Number" formControlName="phoneNumber">
+                  <input formControlName="phoneNumber" id="phoneNumber" matInput placeholder="Phone Number" type="tel">
                 </mat-form-field>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
                 <mat-form-field appearance="outline" style="width: 100%;">
-                  <input matInput type="email" id="email" placeholder="Email" formControlName="email">
+                  <input formControlName="email" id="email" matInput placeholder="Email" type="email">
                 </mat-form-field>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form-group">
                 <mat-form-field appearance="outline" style="width: 100%;">
-                  <input matInput type="text" id="address" placeholder="Address" formControlName="address">
+                  <input formControlName="address" id="address" matInput placeholder="Address" type="text">
                 </mat-form-field>
               </div>
             </div>
             <div class="col-lg-12">
               <div class="form-group">
                 <mat-form-field appearance="outline" style="width: 100%;">
-                  <textarea matInput rows="5" id="query" placeholder="Your Query" formControlName="query"></textarea>
+                  <textarea formControlName="query" id="query" matInput placeholder="Your Query" rows="5"></textarea>
                 </mat-form-field>
               </div>
-              <button type="submit" class="contact-btn" [disabled]="!getInTouchFormGroup.valid">Send Message</button>
+              <button [disabled]="!getInTouchFormGroup.valid" class="contact-btn" type="submit">Send Message</button>
             </div>
           </div>
         </form>
-        
+
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-upcoming-events',
@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './upcoming-events.component.html',
   styleUrl: './upcoming-events.component.css'
 })
-export class UpcomingEventsComponent implements OnInit{
-  blogPosts=[]
+export class UpcomingEventsComponent implements OnInit {
+  blogPosts = []
   // blogPosts = [
   //   {
   //     imgSrc: 'assets/img/blog-img4.jpg',

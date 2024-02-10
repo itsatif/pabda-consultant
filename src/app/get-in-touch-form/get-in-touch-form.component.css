@@ -1,8 +1,8 @@
-.mat-mdc-raised-button[disabled]{
-    background: #7a7a7a !important;
+.mat-mdc-raised-button[disabled] {
+  background: #7a7a7a !important;
 }
 
-.submit{
-    background: #dc2b21 !important;
-    color: #fff !important;
+.submit {
+  background: #dc2b21 !important;
+  color: #fff !important;
 }

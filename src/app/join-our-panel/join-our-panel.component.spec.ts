@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { JoinOurPanelComponent } from './join-our-panel.component';
+import {JoinOurPanelComponent} from './join-our-panel.component';
 
 describe('JoinOurPanelComponent', () => {
   let component: JoinOurPanelComponent;
@@ -10,8 +10,8 @@ describe('JoinOurPanelComponent', () => {
     await TestBed.configureTestingModule({
       imports: [JoinOurPanelComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(JoinOurPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-downloadables',
@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './downloadables.component.css',
 })
 export class DownloadablesComponent {
-  downloadsList:any[]=[]
+  downloadsList: any[] = []
   // downloadsList: any[] = [
   //   {
   //     title: 'Lorem Ipsum is simply dummy text of the printing',

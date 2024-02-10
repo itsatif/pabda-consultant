@@ -1,33 +1,27 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Inject,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BlogGridComponent } from '../blog-grid/blog-grid.component';
-import { WowService } from '../shared-services/wow.service';
-import { HapticFeedbackDirective } from '../../directives/haptic-feedback.directive';
-import { interval, takeWhile } from 'rxjs';
-import { RouterLink } from '@angular/router';
+import {AfterViewInit, Component, ElementRef, Inject, Renderer2, ViewChild,} from '@angular/core';
+import {CarouselModule} from 'ngx-owl-carousel-o';
+import {BlogGridComponent} from '../blog-grid/blog-grid.component';
+import {WowService} from '../shared-services/wow.service';
+import {HapticFeedbackDirective} from '../../directives/haptic-feedback.directive';
+import {interval, takeWhile} from 'rxjs';
+import {RouterLink} from '@angular/router';
+
 declare var $: any;
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselModule, BlogGridComponent, HapticFeedbackDirective,RouterLink],
+  imports: [CarouselModule, BlogGridComponent, HapticFeedbackDirective, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements AfterViewInit {
   isSoundOn: boolean = false;
   counters: any[] = [
-    { business: 1, max: 50 },
-    { happyClients: 1, max: 100 },
-    { respondents: 1, max: 8 },
-    { surveys: 1, max: 6 },
+    {business: 1, max: 50},
+    {happyClients: 1, max: 100},
+    {respondents: 1, max: 8},
+    {surveys: 1, max: 6},
   ];
 
   barsHeight = [
@@ -44,7 +38,8 @@ export class HomeComponent implements AfterViewInit {
   constructor(
     @Inject(WowService) private wowService: WowService,
     private renderer: Renderer2
-  ) {}
+  ) {
+  }
 
   ngAfterViewInit(): void {
     this.wowService.initWow();

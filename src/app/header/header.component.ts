@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {Component, ElementRef, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +11,7 @@ import { Component, ElementRef, HostListener } from '@angular/core';
 export class HeaderComponent {
   isSidebarVisible = false;
   isNavList: boolean[] = new Array<boolean>();
+
   constructor(private el: ElementRef) {
     this.isNavList.fill(false, 0, 5);
   }
@@ -31,6 +32,7 @@ export class HeaderComponent {
   onSidebarClick(event: Event): void {
     event.stopPropagation();
   }
+
   toggleSidebar() {
     this.isSidebarVisible = !this.isSidebarVisible;
   }

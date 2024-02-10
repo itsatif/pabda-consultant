@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CatiComponent } from './cati.component';
+import {CatiComponent} from './cati.component';
 
 describe('CatiComponent', () => {
   let component: CatiComponent;
@@ -10,8 +10,8 @@ describe('CatiComponent', () => {
     await TestBed.configureTestingModule({
       imports: [CatiComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(CatiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

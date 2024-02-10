@@ -3,43 +3,43 @@
     <div class="form-group" style="margin-bottom: 0 !important">
       <mat-form-field appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput formControlName="name" formControlName="name" />
+        <input formControlName="name" formControlName="name" matInput/>
       </mat-form-field>
     </div>
     <div class="form-group" style="margin-bottom: 0 !important">
       <mat-form-field appearance="fill">
         <mat-label>Phone Number</mat-label>
         <input
+          formControlName="phoneNumber"
+          formControlName="phoneNumber"
           matInput
-          formControlName="phoneNumber"
-          formControlName="phoneNumber"
         />
       </mat-form-field>
     </div>
     <div class="form-group" style="margin-bottom: 0 !important">
       <mat-form-field appearance="fill">
         <mat-label>Email ID</mat-label>
-        <input matInput formControlName="email" formControlName="email" />
+        <input formControlName="email" formControlName="email" matInput/>
       </mat-form-field>
     </div>
     <div class="form-group" style="margin-bottom: 0 !important">
       <mat-form-field appearance="fill">
         <mat-label>Your Query</mat-label>
         <textarea
+          formControlName="query"
+          formControlName="query"
           matInput
-          formControlName="query"
           rows="2"
-          formControlName="query"
         ></textarea>
       </mat-form-field>
     </div>
     <div class="form-group" style="margin-bottom: 0 !important">
       <button
+        (click)="onSubmit()"
+        [disabled]="getInTouchFormGroup.invalid"
         class="submit"
         mat-raised-button
         type="submit"
-        (click)="onSubmit()"
-        [disabled]="getInTouchFormGroup.invalid"
       >
         Submit
       </button>

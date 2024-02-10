@@ -1,38 +1,38 @@
 <header class="header-area">
-  <div class="btn" (click)="toggleSidebar()">
+  <div (click)="toggleSidebar()" class="btn">
     <span class="material-icons nav-menu-lc"> menu </span>
   </div>
-  <div class="btn click" *ngIf="isSidebarVisible" (click)="toggleSidebar()">
+  <div (click)="toggleSidebar()" *ngIf="isSidebarVisible" class="btn click">
     <span class="fa fa-bars"></span>
   </div>
   <nav
-    class="sidebar"
-    [ngClass]="{ show: isSidebarVisible }"
     (click)="onSidebarClick($event)"
+    [ngClass]="{ show: isSidebarVisible }"
+    class="sidebar"
   >
     <div class="text">Menu</div>
     <ul>
       <li class="active"><a href="/">Home</a></li>
       <li><a href="client-we-serve">Clients We Serve</a></li>
       <li>
-        <a href="service-listing" class="feat-btn"
-          >Services
+        <a class="feat-btn" href="service-listing"
+        >Services
           <span
+            (click)="
+              $event.stopPropagation(); $event.preventDefault(); openNavList(0)
+            "
             [ngClass]="[
               isNavList && isNavList[0]
                 ? 'fa fa-caret-up first'
                 : 'fa fa-caret-down first'
             ]"
-            (click)="
-              $event.stopPropagation(); $event.preventDefault(); openNavList(0)
-            "
           ></span>
         </a>
 
         <ul
-          class="feat-show"
           [class.show]="isNavList && isNavList[0]"
           [ngClass]="{ show: isNavList && isNavList[0] }"
+          class="feat-show"
         >
           <li><a href="#">Market Research</a></li>
           <li><a href="#">Questionnaire Designing </a></li>
@@ -42,28 +42,28 @@
           <li><a href="#">Respondent Reach</a></li>
           <li>
             <a
-              class="feat-btns"
               (click)="
                 $event.stopPropagation();
                 $event.preventDefault();
                 openNavList(1)
               "
-              >FieldWork
+              class="feat-btns"
+            >FieldWork
               <span
-                [ngClass]="[
-                  isNavList && isNavList[1]
-                    ? 'fa fa-caret-up first'
-                    : 'fa fa-caret-down first'
-                ]"
                 (click)="
                   $event.stopPropagation();
                   $event.preventDefault();
                   openNavList(1)
                 "
+                [ngClass]="[
+                  isNavList && isNavList[1]
+                    ? 'fa fa-caret-up first'
+                    : 'fa fa-caret-down first'
+                ]"
               ></span>
             </a>
 
-            <ul class="feat-shows" [class.show]="isNavList && isNavList[1]">
+            <ul [class.show]="isNavList && isNavList[1]" class="feat-shows">
               <li><a href="cati">Cati</a></li>
               <li><a href="#">CAWI/Online</a></li>
               <li><a href="#">Face to Face </a></li>
@@ -73,20 +73,20 @@
         </ul>
       </li>
       <li>
-        <a href="#" class="serv-btn"
-          >Resource Center
+        <a class="serv-btn" href="#"
+        >Resource Center
           <span
+            (click)="
+              $event.stopPropagation(); $event.preventDefault(); openNavList(2)
+            "
             [ngClass]="[
               isNavList && isNavList[2]
                 ? 'fa fa-caret-up second'
                 : 'fa fa-caret-down second'
             ]"
-            (click)="
-              $event.stopPropagation(); $event.preventDefault(); openNavList(2)
-            "
           ></span>
         </a>
-        <ul class="serv-show" [class.show]="isNavList && isNavList[2]">
+        <ul [class.show]="isNavList && isNavList[2]" class="serv-show">
           <li><a href="blogs">Blogs</a></li>
           <li><a href="upcoming-events">Upcoming Events </a></li>
           <li><a href="downloadables">Downloadables(Reports)</a></li>
@@ -98,7 +98,7 @@
   </nav>
   <div class="logo top-ll">
     <a class="nav-brand" href="/"
-      ><img src="assets/img/new-logo-1.png" alt=""
+    ><img alt="" src="assets/img/new-logo-1.png"
     /></a>
   </div>
 </header>

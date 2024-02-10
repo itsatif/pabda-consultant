@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col-md-8 col-sm-8">
         <div class="blog-details-content">
-          <div class="details-content" [innerHTML]="selectedBlog?.content">
+          <div [innerHTML]="selectedBlog?.content" class="details-content">
           </div>
         </div>
       </div>
@@ -46,40 +46,40 @@
               <form action="#" method="post">
                 <div class="form-group">
                   <input
+                    class="form-control sdr-frs"
                     id="Name"
-                    type="text"
-                    class="form-control sdr-frs"
                     placeholder="Name"
+                    type="text"
                   />
                 </div>
                 <div class="form-group">
                   <input
+                    class="form-control sdr-frs"
                     id="Phone Number"
-                    type="text"
-                    class="form-control sdr-frs"
                     placeholder="Phone  Number"
+                    type="text"
                   />
                 </div>
                 <div class="form-group">
                   <input
-                    id="Email"
-                    type="text"
                     class="form-control sdr-frs"
+                    id="Email"
                     placeholder="Email Address"
+                    type="text"
                   />
                 </div>
                 <div class="form-group">
                   <textarea
-                    id="txt_Message_7"
                     class="form-control sdr-frs"
+                    id="txt_Message_7"
                     placeholder="Message"
                   ></textarea>
                 </div>
                 <div class="form-group">
                   <input
-                    type="submit"
-                    id="submit-btn"
                     class="btn btn-green ftr-btn1"
+                    id="submit-btn"
+                    type="submit"
                     value="Submit"
                   />
                 </div>
@@ -95,13 +95,13 @@
                 >
                   <div class="post-thumb">
                     <a href="blog-detail.html"
-                      ><img src="assets/img/blog-1.jpg" alt=""
+                    ><img alt="" src="assets/img/blog-1.jpg"
                     /></a>
                   </div>
                   <div class="post-content">
                     <h4 class="post-title">
                       <a href="#"
-                        >What Impact Does Comprehensive Market Research Have on
+                      >What Impact Does Comprehensive Market Research Have on
                         Decision-Making?
                       </a>
                     </h4>
@@ -116,7 +116,7 @@
                 >
                   <div class="post-thumb">
                     <a href="blog-detail.html"
-                      ><img src="assets/img/blog-3.jpg" alt=""
+                    ><img alt="" src="assets/img/blog-3.jpg"
                     /></a>
                   </div>
                   <div class="post-content">

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ContactUsFormComponent } from './contact-us-form.component';
+import {ContactUsFormComponent} from './contact-us-form.component';
 
 describe('ContactUsFormComponent', () => {
   let component: ContactUsFormComponent;
@@ -10,8 +10,8 @@ describe('ContactUsFormComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ContactUsFormComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(ContactUsFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

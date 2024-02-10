@@ -6,23 +6,23 @@
 >
   <div class="media-bx">
     <div class="md-img">
-      <img [src]="blog?.['imgSrc']" />
+      <img [src]="blog?.['imgSrc']"/>
     </div>
     <div class="blog-one__content">
       <div class="blog__inner">
         <div class="blog__meta">
           <div class="tjblog_author">
             <h5>
-              <i class="fa fa-calendar cl-nd" aria-hidden="true"></i>
-              {{transformDate(blog?.date)}}
+              <i aria-hidden="true" class="fa fa-calendar cl-nd"></i>
+              {{ transformDate(blog?.date) }}
             </h5>
           </div>
         </div>
         <div class="content">
           <h3 class="blog-title">
             <a [href]="'blogs/' + blog.slug">{{
-              extractTitle(blog?.content)
-            }}</a>
+                extractTitle(blog?.content)
+              }}</a>
           </h3>
           <p>{{ extractIntro(blog?.content) }}</p>
         </div>

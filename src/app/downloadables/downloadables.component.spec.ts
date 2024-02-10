@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DownloadablesComponent } from './downloadables.component';
+import {DownloadablesComponent} from './downloadables.component';
 
 describe('DownloadablesComponent', () => {
   let component: DownloadablesComponent;
@@ -10,8 +10,8 @@ describe('DownloadablesComponent', () => {
     await TestBed.configureTestingModule({
       imports: [DownloadablesComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(DownloadablesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

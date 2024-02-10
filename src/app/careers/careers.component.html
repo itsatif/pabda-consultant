@@ -73,63 +73,63 @@
         </div>
       </div> -->
     </div>
-    <div id="careers-form" class="contact-us-form buy-bulk">
+    <div class="contact-us-form buy-bulk" id="careers-form">
       <form
-        class="contact-form"
-        [formGroup]="careerFormGroup"
         (ngSubmit)="onSubmit()"
+        [formGroup]="careerFormGroup"
+        class="contact-form"
       >
         <h3>Let's join with us !!</h3>
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
               <input
-                type="text"
                 class="form-control"
-                id="uname"
-                placeholder="First Name"
                 formControlName="firstName"
+                id="uname"
                 name="name"
+                placeholder="First Name"
                 required=""
+                type="text"
               />
             </div>
           </div>
           <div class="col-lg-6">
             <div class="form-group">
               <input
-                type="text"
                 class="form-control"
-                id="Last-Name"
                 formControlName="lastName"
-                placeholder="Last Name"
+                id="Last-Name"
                 name="Last-Name"
+                placeholder="Last Name"
                 required=""
-              />
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="form-group">
-              <input
                 type="text"
-                class="form-control"
-                id="Phone-Number"
-                formControlName="phoneNumber"
-                placeholder="Phone Number"
-                name="phone number"
-                required=""
               />
             </div>
           </div>
           <div class="col-lg-6">
             <div class="form-group">
               <input
-                type="email"
                 class="form-control"
-                id="email"
-                formControlName="email"
-                placeholder="Enter Your Email"
-                name="Your Email"
+                formControlName="phoneNumber"
+                id="Phone-Number"
+                name="phone number"
+                placeholder="Phone Number"
                 required=""
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <input
+                class="form-control"
+                formControlName="email"
+                id="email"
+                name="Your Email"
+                placeholder="Enter Your Email"
+                required=""
+                type="email"
               />
             </div>
           </div>
@@ -137,52 +137,52 @@
           <div class="col-lg-6">
             <div class="form-group">
               <input
-                type="text"
                 class="form-control"
-                id="Job title"
                 formControlName="jobTitle"
+                id="Job title"
+                name="phone number"
                 placeholder="Job title"
-                name="phone number"
                 required=""
-              />
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="form-group">
-              <input
-                type="email"
-                class="form-control"
-                id="location"
-                formControlName="location"
-                placeholder="Location"
-                name="Your Email"
-                required=""
-              />
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="form-group">
-              <input
                 type="text"
-                class="form-control"
-                id=" linkedin profile"
-                formControlName="linkedinProfile"
-                placeholder=" Linkedin profile"
-                name="phone number"
-                required=""
               />
             </div>
           </div>
           <div class="col-lg-6">
             <div class="form-group">
               <input
-                type="email"
                 class="form-control"
-                id="why"
-                formControlName="whyJoin"
-                placeholder=" Why do you want to join Pabda Consulting? "
+                formControlName="location"
+                id="location"
                 name="Your Email"
+                placeholder="Location"
                 required=""
+                type="email"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <input
+                class="form-control"
+                formControlName="linkedinProfile"
+                id=" linkedin profile"
+                name="phone number"
+                placeholder=" Linkedin profile"
+                required=""
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <input
+                class="form-control"
+                formControlName="whyJoin"
+                id="why"
+                name="Your Email"
+                placeholder=" Why do you want to join Pabda Consulting? "
+                required=""
+                type="email"
               />
             </div>
           </div>
@@ -190,30 +190,30 @@
           <div class="col-lg-12">
             <textarea
               class="form-control"
-              rows="5"
-              id="comment"
               formControlName="message"
+              id="comment"
               placeholder="Message"
+              rows="5"
             ></textarea>
           </div>
           <div class="col-lg-12">
             <div class="form-group">
               <label>Upload Resume</label>
               <input
-                type="file"
+                accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv"
+                aria-invalid="false"
+                aria-required="true"
+                class="form-control sdr-frs brow"
+                formControlName="resume"
                 name="file-880"
                 size="5000"
-                formControlName="resume"
-                class="form-control sdr-frs brow"
-                accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv"
-                aria-required="true"
-                aria-invalid="false"
+                type="file"
               />
               <p>Accepted file types: pdf, doc, Max. file size: 3 MB.</p>
               <button
-                type="submit"
                 [disabled]="careerFormGroup.invalid"
                 class="contact-btn"
+                type="submit"
               >
                 Submit
               </button>

@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { convertIso8601ToLocalDate } from '../../utils/common.utils';
+import {CommonModule} from '@angular/common';
+import {Component} from '@angular/core';
+import {convertIso8601ToLocalDate} from '../../utils/common.utils';
 
 @Component({
   selector: 'app-blog-grid',
@@ -14,9 +14,9 @@ export class BlogGridComponent {
   blogData = [
     {
       id: 1,
-      date:'2023-12-08T09:00:38.119Z',
-      imgSrc:'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-2.jpg',
-      slug:"strategies-for-expanding-your-businesss-industries-reach-and-breaking-barriers",
+      date: '2023-12-08T09:00:38.119Z',
+      imgSrc: 'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-2.jpg',
+      slug: "strategies-for-expanding-your-businesss-industries-reach-and-breaking-barriers",
       content: `<div class="blog-image">
   <img class="img-responsive" src="http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-2.jpg" />
 </div>
@@ -121,71 +121,71 @@ export class BlogGridComponent {
 </p>`,
     },
     {
-      id:2,
-      date:'2024-01-12T09:00:38.119Z',
-      imgSrc:'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-3.jpg',
-      slug:"a-guide-to-effective-survey-programming-to-navigate-the-digital-space",
-      content:`<div class="blog-image">
+      id: 2,
+      date: '2024-01-12T09:00:38.119Z',
+      imgSrc: 'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-3.jpg',
+      slug: "a-guide-to-effective-survey-programming-to-navigate-the-digital-space",
+      content: `<div class="blog-image">
       <img class="img-responsive" src="http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-3.jpg" />
     </div>
-    
+
     <h3>
       A Guide to Effective Survey Programming to Navigate the Digital Space
     </h3>
-    
+
     <p>
       Businesses, researchers, and organizations rely on surveys for insights. Survey programming is essential for data collection and analysis in the digital age. This comprehensive guide covers critical techniques and best practices for developing effective survey programs that can overcome digital hurdles and leverage opportunities.
     </p>
-    
+
     <h4>What Is Survey Programming?</h4>
-    
+
     <p>
       Survey programming involves creating and implementing digital surveys. It includes questionnaire design, response forms, skip patterns, and logic flows. The ultimate goal is to maximize data accuracy and dependability while providing responders with a smooth and efficient experience.
     </p>
-    
+
     <h4>Effective Survey Programming - The Key Elements</h4>
-    
+
     <p>
       Define study objectives and the target audience before beginning survey programming. The target audience helps adapt survey questions and programming logic to collect usable data. A survey without a clear objective and audience may lack focus and generate insufficient results.
     </p>
-    
+
     <h4>User-Friendly Design</h4>
-    
+
     <p>
       Digital user experience is crucial. Respondent annoyance and distorted findings might emerge from a poorly designed survey interface. Avoiding this requires surveys with a clear, intuitive UI that responders can navigate. To meet different tastes, surveys must be optimized for desktop and mobile platforms.
     </p>
-    
+
     <p>Designing good survey questions requires balancing clarity, conciseness, and relevance. Accurate responses require avoiding ambiguity and guiding language. A mix of multiple-choice, open-ended, and rating scale questions gives diversity and complexity to the survey. The sequencing of questions should be rational to keep respondents engaged and coherent.</p>
-    
+
     <p>Consider implementing dynamic question logic to improve the survey experience and streamline data collection. This features skip patterns and branching logic that adapts the survey to prior responses. Asking just relevant questions saves responders time and improves data accuracy.</p>
-    
+
     <p>To ensure data integrity, implement response validation and quality checks. These tests detect nonsensical or contradictory responses, assuring data reliability. Additionally, quality checks should address incomplete surveys or patterns that suggest unreliable responses.</p>
-    
+
     <p>Supporting surveys in various languages is crucial for inclusivity in a globalized world. Survey software should enable many languages so participants can participate in their preferred language. This increases the survey's reach and ensures reliable data collection despite language hurdles.</p>
-    
+
     <p>As data privacy becomes more important, survey programmers must prioritize the security of respondent information. Secure data storage and encryption should protect sensitive data and enhance participant trust. Clearly articulated privacy policies also improve responder satisfaction.</p>
-    
+
     <h4>Mobile Optimization</h4>
-    
+
     <p>Optimizing surveys for cellphones is crucial due to their widespread use. Smartphone and tablet respondents have a smooth experience with responsive designs and mobile-friendly UI. Mobile optimization neglect can cost you a lot of responses.</p>
-    
+
     <p>Thorough testing and piloting are crucial before launching a survey. This step helps refine the survey instrument by identifying problems, flaws, and usability difficulties. Piloting helps identify issues and ensures the survey works properly and gives a good user experience.</p>
-    
+
     <p>Using technology for real-time monitoring and adaptation of survey progress is a proactive strategy. This lets you spot concerns like high dropout rates or unusual response patterns. Real-time monitoring lets survey administrators adjust the survey to handle new issues and ensure seamless data collection.</p>
-    
+
     <h4>Conclusion</h4>
-    
+
     <p>Effective survey programming is key to digital survey performance. Researchers and enterprises may optimize data collection using user-friendly design, dynamic logic, data security, and continuous monitoring. Staying current with technology and adding new features will help create surveys that provide valuable insights in the digital age.</p>
-    
+
     <p>Using these basic practices improves data quality and makes survey participants happier. In an information-rich world, well-executed survey programming is essential for extracting insights that influence decision-making and boost research and commercial performance in the digital age.</p>
     `
     },
     {
-      id:3,
-      date:'2024-02-07T09:00:38.119Z',
-      imgSrc:'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-1.jpg',
-      slug:"what-impact-does-comprehensive-market-research-have-on-decision-making",
-      content:`<div class="blog-image">
+      id: 3,
+      date: '2024-02-07T09:00:38.119Z',
+      imgSrc: 'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-1.jpg',
+      slug: "what-impact-does-comprehensive-market-research-have-on-decision-making",
+      content: `<div class="blog-image">
       <img class="img-responsive" src="http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-1.jpg" />
     </div>
       <h3>What Impact Does Comprehensive Market Research Have on Decision-Making?</h3>
@@ -193,55 +193,55 @@ export class BlogGridComponent {
       <p>
         Comprehensive Market research is a key component of achieving success. Surveys are one of the popular means of reaching potential targets. Surveys help to gain insight into the preferences and opinions of the customers. Without thorough market research, businesses will fail to create a connection with customers and miss growth opportunities. The entrepreneurs would make poor business decisions, and ultimately lose customers. Market research can help to scale your business to a new level. Market research needs finance, time, and effort to get a positive outcome.  Comprehensive market research is an indispensable part of running a successful business.
       </p>
-      
+
       <h4>Benefits of Market Research</h4>
-      
+
       <p>
         Market research can bring valuable benefits. Here is an insight into some of the impactful ways that market research can empower success:
       </p>
-      
+
       <h4>Opportunities For Growth</h4>
-      
+
       <p>
         Market research is the crucial step for companies to launch their new products in the market. Conducting research periodically ensures new opportunities for businesses to expand & grow. For example, a little modification in your products can turn a new leaf to unlock a new customer base. Through market research, you can discover opportunities to create partnerships with other businesses.
       </p>
-      
+
       <p>
         Joint promotions can be mutually beneficial for expansion and strengthen the reach of new target audiences. Market research can reveal the shortcomings in your product or services, which will allow you to modify them. Customer satisfaction is the primary motto of every business and your company can discover ways that can appeal to the preferences of the customers.
       </p>
-      
+
       <h4>Making Connection With Audience</h4>
-      
+
       <p>
         If you understand the preferences of your target audience, it will help you to reach them effectively. For strategic marketing campaigns, you need to have an informed marketing strategy. If you want to choose the right marketing channels to reach your potential customers, try to connect with them through the content of your marketing materials. The features of your product that you advertise should be designed in such a way so that they motivate and reach your target. This means of effective communication will draw more customers.
       </p>
-      
+
       <h4>Competitive Edge</h4>
-      
+
       <p>
         Through market research, organizations can sustain a degree of knowledge with respect to their competitors. Understanding the strategies, capabilities, and vulnerabilities of competitors can potentially provide one with a competitive advantage. Organizations are capable of seizing opportunities that rivals may have failed to exploit, precisely identifying market voids, and differentiating themselves from the competition in an effective manner.
       </p>
-      
+
       <h4>Innovation</h4>
-      
+
       <p>
         Market research plays a critical role in facilitating effective guidance for innovation and product development. Organizations that possess an extensive comprehension of their customers' desires, preferences, and challenges are better equipped to create products and services that meet market expectations with greater precision. By adopting a consumer-centric approach, this strategy not only achieves favorable product outcomes but also enhances the organization's overall innovation process.
       </p>
-      
+
       <h4>Customer-Centric Approach</h4>
-      
+
       <p>
         Market research helps to understand your consumer base effectively. So it is essential to develop a customer-centric business. Customer-centric businesses put the experience of the customers at the forefront. Prioritizing the customer’s needs is a brilliant recipe for generating huge profits.
       </p>
-      
+
       <h4>Reduce Risks</h4>
-      
+
       <p>
         Risk is a necessary element of any venture. If entrepreneurs do not take risks, they are limiting their potential for reward. Successful businesses mitigate their risk factors in effective ways. Before implementing a plan, businesses should use market research to minimize the risk factors. To minimize risks, businesses should ensure that there’s demand for their product. Proper market research will help to predict whether the product has real potential for success.
       </p>
-      
+
       <h4>To Sum Up</h4>
-      
+
       <p>
         Market research is executed to understand the desires of the customers. Entrepreneurs can not build a customer-centric business if they do not understand their target audience. It is sure to fail. Conducting thorough market research with the help of Pabda Consulting will open doors to appeal to the preferences & dislikes of the customers. Market research data is like a compass, steering the company to make informed decisions to reach its goal of retaining its potential customers.
       </p>
@@ -258,7 +258,7 @@ export class BlogGridComponent {
     return intro.length > 50 ? intro.slice(0, 100) + '...' : intro;
   }
 
-  transformDate(date:any):string{
+  transformDate(date: any): string {
     return convertIso8601ToLocalDate(date);
   }
 }

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DataProcessingComponent } from './data-processing.component';
+import {DataProcessingComponent} from './data-processing.component';
 
 describe('DataProcessingComponent', () => {
   let component: DataProcessingComponent;
@@ -10,8 +10,8 @@ describe('DataProcessingComponent', () => {
     await TestBed.configureTestingModule({
       imports: [DataProcessingComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(DataProcessingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

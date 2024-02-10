@@ -4,7 +4,7 @@
 >
   <div class="container h-100">
   </div>
-  <div class="sound" (click)="playOSSound()">
+  <div (click)="playOSSound()" class="sound">
     <span>Sound</span>
     <div class="equalizer">
       <span></span> <span></span> <span></span> <span></span>
@@ -16,15 +16,15 @@
   <div class="container">
     <div class="row">
       <ng-container *ngIf="blogPosts.length > 0; else noEvents">
-        <div class="col-md-4" *ngFor="let post of blogPosts; let i = index">
+        <div *ngFor="let post of blogPosts; let i = index" class="col-md-4">
           <div
-            class="media-bx wow fadeInLeft"
             [attr.data-wow-delay]="i * 0.2 + 's'"
+            class="media-bx wow fadeInLeft"
           >
             <div class="md-img">
-              <img [src]="post.imgSrc" />
+              <img [src]="post.imgSrc"/>
               <div class="date">
-                <i class="fa fa-calendar cl-nd" aria-hidden="true"></i>
+                <i aria-hidden="true" class="fa fa-calendar cl-nd"></i>
                 {{ post.date }}
               </div>
             </div>
@@ -33,7 +33,7 @@
               <p>{{ post.content }}</p>
               <div class="readmore">
                 <a href="upcoming-events-detail.html"
-                  >Read More <i class="fa fa-angle-right" aria-hidden="true"></i
+                >Read More <i aria-hidden="true" class="fa fa-angle-right"></i
                 ></a>
               </div>
             </div>

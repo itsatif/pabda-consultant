@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GetInTouchFormComponent } from './get-in-touch-form.component';
+import {GetInTouchFormComponent} from './get-in-touch-form.component';
 
 describe('GetInTouchFormComponent', () => {
   let component: GetInTouchFormComponent;
@@ -10,8 +10,8 @@ describe('GetInTouchFormComponent', () => {
     await TestBed.configureTestingModule({
       imports: [GetInTouchFormComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(GetInTouchFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

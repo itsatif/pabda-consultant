@@ -30,20 +30,20 @@
     <div class="row">
       <ng-container *ngIf="downloadsList.length; else noDownloads">
         <div
-          class="col-md-4 wow fadeInLeft"
           *ngFor="let download of downloadsList; let i = index"
+          class="col-md-4 wow fadeInLeft"
         >
           <div class="media-bx">
             <div class="md-img">
-              <img [src]="download.image" />
+              <img [src]="download.image"/>
             </div>
             <div class="md-content">
               <h3>{{ download.title }}</h3>
               <button
-                type="button"
                 class="thm-btn download"
-                data-toggle="modal"
                 data-target="#myModal"
+                data-toggle="modal"
+                type="button"
               >
                 <span>Download Now</span>
               </button>

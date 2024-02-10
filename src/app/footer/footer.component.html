@@ -12,7 +12,7 @@
                       </div> -->
 
             <div class="footer-logo my-4">
-              <img src="assets/img/new-logo-1.png" alt="" />
+              <img alt="" src="assets/img/new-logo-1.png"/>
             </div>
             <p>
               We are one of the fastest-growing research and analytics firm
@@ -20,7 +20,7 @@
             </p>
 
             <div class="footer-widget-area cc-fa">
-              <!--                                     
+              <!--
                               <div class="widget links-widget ">
                                   <h6  class="widget-title">Contact Us</h6>
                               </div> -->
@@ -30,7 +30,7 @@
                                   <h6><a href="tel:480-353-2950 "><i class="fa fa-phone sdr-ics" aria-hidden="true"></i> 480-353-2950   </a>  </h6> -->
                 <h6>
                   <a href="mailto: sales@pabdaconsulting.com   "
-                    ><i class="fa fa-envelope sdr-ics" aria-hidden="true"></i>
+                  ><i aria-hidden="true" class="fa fa-envelope sdr-ics"></i>
                     sales&#64;pabdaconsulting.com
                   </a>
                 </h6>
@@ -55,7 +55,7 @@
               <li><a href="join-our-panel">Join our Panel</a></li>
             </ul>
 
-            <br />
+            <br/>
           </div>
         </div>
         <!-- Single Footer Widget -->
@@ -86,48 +86,48 @@
               <form #myForm="ngForm" (ngSubmit)="submitForm(myForm)">
                 <div class="form-group">
                   <input
-                    type="text"
-                    class="form-control sdr-frs"
-                    placeholder="Name"
                     [(ngModel)]="formData.name"
+                    class="form-control sdr-frs"
                     name="name"
+                    placeholder="Name"
                     required
-                  />
-                </div>
-                <div class="form-group">
-                  <input
                     type="text"
-                    class="form-control sdr-frs"
-                    placeholder="Phone Number"
-                    [(ngModel)]="formData.phoneNumber"
-                    name="phoneNumber"
-                    required
                   />
                 </div>
                 <div class="form-group">
                   <input
-                    type="email"
+                    [(ngModel)]="formData.phoneNumber"
                     class="form-control sdr-frs"
-                    placeholder="Email ID"
-                    [(ngModel)]="formData.email"
-                    name="email"
+                    name="phoneNumber"
+                    placeholder="Phone Number"
                     required
+                    type="text"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    [(ngModel)]="formData.email"
+                    class="form-control sdr-frs"
+                    name="email"
+                    placeholder="Email ID"
+                    required
+                    type="email"
                   />
                 </div>
                 <div class="form-group">
                   <textarea
-                    class="form-control"
-                    rows="2"
-                    placeholder="Your Query"
                     [(ngModel)]="formData.query"
+                    class="form-control"
                     name="query"
+                    placeholder="Your Query"
+                    rows="2"
                   ></textarea>
                 </div>
                 <div class="form-group">
                   <input
+                    class="btn btn-green ftr-btn1"
                     style="font-size: 14px; color: #fff !important"
                     type="submit"
-                    class="btn btn-green ftr-btn1"
                     value="Submit"
                   />
                 </div>
