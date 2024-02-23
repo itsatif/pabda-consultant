@@ -9,6 +9,7 @@ interface ServiceDetail {
   title: string;
   description: any;
   slug: string;
+  isVideo?: boolean
   videoSrc: string
 }
 
@@ -38,6 +39,7 @@ export class DataProcessingComponent implements OnInit {
         "p2": "Our committed team uses a wide range of research techniques, such as data mining, trend analysis, surveys and focus groups, to make sure our clients obtain a comprehensive understanding of their target audiences. Our market research gives businesses the information they need to succeed in today's dynamic economy, whether it's for spotting new trends, measuring consumer happiness, or analyzing competition tactics. Customers may successfully navigate the intricacies of the market and achieve long-term growth by availing themselves of our services."
       },
       "slug": "market-research",
+      isVideo: true,
       "videoSrc": "assets/img/market_research.mp4"
     },
     {
@@ -48,7 +50,8 @@ export class DataProcessingComponent implements OnInit {
         "p2": "Our skilled research team uses cutting-edge methods and industry best practices to create questionnaires that produce precise and useful data. We use our experience to maximize survey participation and minimize bias, from question structure to response format optimisation, providing thorough insights that promote company success. Clients may confidently collect the data they require to stay ahead of the curve and surpass customer expectations by using our questionnaire design service."
       },
       "slug": "questionnaire-designing",
-      "videoSrc": "assets/img/questionnaire_designing.mp4"
+      isVideo: false,
+      "videoSrc": "assets/img/questionnaire_designing.jpg"
     },
     {
       "id": 3,
@@ -58,7 +61,8 @@ export class DataProcessingComponent implements OnInit {
         "p2": "In order to produce dynamic surveys with interactive elements and a user-friendly experience that optimizes response rates, our committed staff uses cutting-edge programming approaches. We use the newest technologies to create surveys that effectively gather thorough data, from intricate skip logic and branching paths to adaptable layouts and mobile adaptability. Our survey programming solution empowers clients to effectively interact with their target audience and obtain insightful data that supports strategic growth objectives and well-informed decision-making."
       },
       "slug": "survey-programming",
-      "videoSrc": "assets/img/survey_programming.mp4"
+      isVideo: false,
+      "videoSrc": "assets/img/survey_programming.jpg"
     },
     {
       "id": 4,
@@ -68,6 +72,7 @@ export class DataProcessingComponent implements OnInit {
         "p2": "Our skilled staff is adept in several data processing methods, such as aggregation, normalization, and data cleaning. Whether working with big datasets or intricate data structures, we utilize cutting-edge technologies and algorithms to effectively extract relevant insights. Clients may use their data to support strategic initiatives, increase operational effectiveness, and gain a competitive edge in today's fast-paced market by collaborating with us for data processing."
       },
       "slug": "data-processing",
+      isVideo: true,
       "videoSrc": "assets/img/data_processing.mp4"
     },
     {
@@ -78,7 +83,8 @@ export class DataProcessingComponent implements OnInit {
         "p2": "We offer specialized solutions that are in line with the goals and desires of our clients since we have a thorough awareness of market trends and dynamics. Our strategies and actions, which range from focused outreach efforts to market research, promote long-term success and growth. Clients can confidently navigate difficult sectors, open up new business opportunities, and establish themselves as leaders in their respective fields by utilizing our sector's Reach services."
       },
       "slug": "industries-reach",
-      "videoSrc": "assets/img/industries_reach.mp4"
+      "isVideo": false,
+      "videoSrc": "assets/img/industries_reach.jpg"
     },
     {
       "id": 6,
@@ -88,7 +94,8 @@ export class DataProcessingComponent implements OnInit {
         "p2": "We customize our Respondent Reach services to each client's specific needs and goals, emphasizing personalized communication and precise targeting. Our proficiency with audience identification and engagement tactics guarantees efficient outreach and significant engagements, regardless of the target audience—narrow markets, particular consumer categories, or worldwide audiences. Clients who work with us for Respondent Reach get access to the information and opinions needed to propel their businesses forward and accomplish their objectives."
       },
       "slug": "respondent-reach",
-      "videoSrc": "assets/img/respondent_reach.mp4"
+      isVideo: false,
+      "videoSrc": "assets/img/respondent_reach.jpg"
     },
     {
       "id": 7,
@@ -98,7 +105,8 @@ export class DataProcessingComponent implements OnInit {
         "p2": "We allow our clients the freedom to reach a wide range of demographics and geographical areas with CATI, irrespective of technological obstacles or lack of internet connectivity. Our staff makes sure that every phone interview follows the best practices for survey methodology, all the while upholding the highest standards of discretion and professionalism. Through the use of our CATI services, clients may obtain extensive data, obtain insightful knowledge about the tastes and behaviours of their customers, and make well-informed decisions that will advance their business."
       },
       "slug": "cati",
-      "videoSrc": "assets/img/cati.mp4"
+      isVideo: false,
+      "videoSrc": "assets/img/cati_detail.jpg"
     },
     {
       "id": 8,
@@ -108,7 +116,8 @@ export class DataProcessingComponent implements OnInit {
         "p2": "With CAWI, companies can easily tailor surveys to their unique research goals by adding features like multimedia content, branching, and skip logic to increase respondent engagement. By following industry best practices and implementing strict quality control procedures, our skilled staff guarantees the accuracy and integrity of data that is gathered. Through the use of our CAWI services, clients can obtain timely and useful insights that enable them to drive company success in the current digital environment and make well-informed decisions."
       },
       "slug": "cawi-online",
-      "videoSrc": "assets/img/cawi_online.mp4"
+      isVideo: false,
+      "videoSrc": "assets/img/cawi_online.jpg"
     },
     {
       "id": 9,
@@ -118,6 +127,7 @@ export class DataProcessingComponent implements OnInit {
         "p2": "Our in-person interviews are carried out with integrity and empathy, maintaining a commitment to professionalism and secrecy while building rapport and trust with respondents. Whether we conduct interviews at homes of participants, retail locations, or events, we guarantee a relaxed and friendly atmosphere that encourages candid communication. Through the utilization of our in-person interview services, clients may enhance their comprehension of consumer preferences, obtain significant qualitative insights, and make well-informed judgements that propel corporate expansion and prosperity."
       },
       "slug": "face-to-face",
+      isVideo: true,
       "videoSrc": "assets/img/face_to_face.mp4"
     },
     {
@@ -128,6 +138,7 @@ export class DataProcessingComponent implements OnInit {
         "p2": "Our in-depth talks enable clients to have a deeper understanding of market trends, consumer behaviours, and industry difficulties with an emphasis on encouraging interaction and cooperation. Through our proficiency in qualitative research methodology and facilitation, customers may effectively leverage the collective wisdom of varied stakeholders, thereby stimulating innovation and providing valuable insights for strategic decision-making. By engaging in comprehensive dialogues with Pabda Consulting, clients can uncover fresh viewpoints, spot prospects, and maintain an advantage in the ever-changing business environment of today."
       },
       "slug": "in-depth-discussions",
+      isVideo: true,
       "videoSrc": "assets/img/in_depth_discussions.mp4"
     }
   ]
@@ -153,9 +164,9 @@ export class DataProcessingComponent implements OnInit {
     this.selectedSlug = serviceDetail?.slug;
     return serviceDetail ? of(serviceDetail) : of(null);
   }
-
+  
   isLinkActive(slug: string): boolean {
     return this.route.snapshot.paramMap.get('slug') === slug;
   }
-  
+
 }
