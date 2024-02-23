@@ -29,7 +29,7 @@ export const routes: Routes = [
   {path: 'cati', component: CatiComponent},
   {path: 'upcoming-events', component: UpcomingEventsComponent},
   {path: 'service-details', component: ServiceDetailComponent},
-  {path: 'data-processing', component: DataProcessingComponent},
+  {path: 'service-details/:slug', component: DataProcessingComponent},
   {path: 'service-listing', component: ServiceListingComponent},
   {path: 'blogs', component: BlogsComponent},
   {path: 'blogs/:blogTitle', component: BlogDetailsComponent},

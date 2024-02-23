@@ -1,7 +1,6 @@
 <section
-  class="breadcumb-area bg-img"
-  style="background-image: url(assets/img/inner-banner-new-5.jpg)"
->
+  [ngStyle]="{ 'background-image': 'url(assets/img/' + selectedSlug + '.jpg' + ')' }"
+  class="breadcumb-area bg-img">
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-12">
@@ -25,57 +24,34 @@
       <div class="product-cat">
         <div class="row">
           <div class="col-md-8 col-md-push-4">
-            <div class="service-detail">
-              <div class="ser-des">
-                <video
-                  autoplay=""
-                  loop=""
-                  muted=""
-                  playsinline=""
-                  preload="metadata"
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    margin-top: 10px;
-                    border: 8px solid #c6d4d7;
-                    border-radius: 40px 0;
-                    object-fit: fill;
-                  "
-                >
-                  <source
-                    src="assets/img/data-processing-2.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-                <!-- <div class="sr-img1 wow zoomIn" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s;"><img class="img-responsive" src="assets/img/data-processing-video.mp4" alt="data-processing"></div> -->
-                <h2>Data Processing</h2>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+            <ng-container *ngIf="(service$ | async) as service">
+              <div class="service-detail">
+                <div class="ser-des">
+                  <video
+                    autoplay=""
+                    loop=""
+                    muted=""
+                    playsinline=""
+                    preload="metadata"
+                    style="
+          width: 100%;
+          height: 100%;
+          margin-top: 10px;
+          border: 8px solid #c6d4d7;
+          border-radius: 40px 0;
+          object-fit: fill;
+        "
+                  >
+                    <source [src]="service.videoSrc" type="video/mp4"/>
+                  </video>
+                  <h2>{{ service.title }}</h2>
+                  <ng-container *ngFor="let paragraph of (service.description | objectToArray)">
+                    <p>{{ paragraph }}</p>
+                  </ng-container>
+                </div>
               </div>
-            </div>
+            </ng-container>
+
           </div>
           <div class="col-md-4 col-md-pull-8">
             <div class="sidebar-cate_list sticky">
@@ -86,16 +62,36 @@
               >
                 <h3>Our Services</h3>
                 <ul>
-                  <li class="active"><a href="#">Market Research</a></li>
-                  <li><a href="#">Questionnaire Designing </a></li>
-                  <li><a href="#">Survey Programming</a></li>
-                  <li><a href="#">Data Processing</a></li>
-                  <li><a href="#">Industries Reach</a></li>
-                  <li><a href="#">Respondent Reach</a></li>
-                  <li><a href="#">CATI</a></li>
-                  <li><a href="#">CAWI/Online</a></li>
-                  <li><a href="#">Face to Face </a></li>
-                  <li><a href="#"> In-depth Discussions</a></li>
+                  <li [ngClass]="{ 'active': isLinkActive('market-research') }">
+                    <a href="/service-details/market-research">Market Research</a>
+                  </li>
+                  <li [ngClass]="{ 'active': isLinkActive('questionnaire-designing') }">
+                    <a href="/service-details/questionnaire-designing">Questionnaire Designing</a>
+                  </li>
+                  <li [ngClass]="{ 'active': isLinkActive('survey-programming') }">
+                    <a href="/service-details/survey-programming">Survey Programming</a>
+                  </li>
+                  <li [ngClass]="{ 'active': isLinkActive('data-processing') }">
+                    <a href="/service-details/data-processing">Data Processing</a>
+                  </li>
+                  <li [ngClass]="{ 'active': isLinkActive('industries-reach') }">
+                    <a href="/service-details/industries-reach">Industries Reach</a>
+                  </li>
+                  <li [ngClass]="{ 'active': isLinkActive('respondent-reach') }">
+                    <a href="/service-details/respondent-reach">Respondent Reach</a>
+                  </li>
+                  <li [ngClass]="{ 'active': isLinkActive('cati') }">
+                    <a href="/service-details/cati">CATI</a>
+                  </li>
+                  <li [ngClass]="{ 'active': isLinkActive('cawi-online') }">
+                    <a href="/service-details/cawi-online">CAWI/Online</a>
+                  </li>
+                  <li [ngClass]="{ 'active': isLinkActive('face-to-face') }">
+                    <a href="/service-details/face-to-face">Face to Face</a>
+                  </li>
+                  <li [ngClass]="{ 'active': isLinkActive('in-depth-discussions') }">
+                    <a href="/service-details/in-depth-discussions">In-depth Discussions</a>
+                  </li>
                 </ul>
                 <div class="faq-page__right">
                   <div
@@ -146,3 +142,4 @@
     </div>
   </div>
 </div>
+
