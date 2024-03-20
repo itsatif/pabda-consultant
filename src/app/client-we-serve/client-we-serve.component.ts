@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-client-we-serve',
@@ -18,7 +18,7 @@ export class ClientWeServeComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.equalizerAnimation('.equalizer', 180, this.barsHeight);
+    // this.equalizerAnimation('.equalizer', 180, this.barsHeight);
   }
 
   randomBetween(min: number, max: number): number {
@@ -28,7 +28,7 @@ export class ClientWeServeComponent implements OnInit {
   equalizerAnimation(
     selector: string,
     speed: number,
-    barsHeight: number[][]
+    barsHeight: number[][],
   ): void {
     const equalizer = document.querySelector(selector);
     if (!equalizer) return;
@@ -40,7 +40,7 @@ export class ClientWeServeComponent implements OnInit {
       spans.forEach((span, idx) => {
         const height = this.randomBetween(
           barsHeight[idx][0],
-          barsHeight[idx][1]
+          barsHeight[idx][1],
         );
         (span as HTMLElement).style.height = `${height}px`;
       });

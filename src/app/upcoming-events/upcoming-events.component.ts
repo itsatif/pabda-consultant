@@ -1,15 +1,15 @@
-import {CommonModule} from '@angular/common';
-import {Component, OnInit} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-upcoming-events',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './upcoming-events.component.html',
-  styleUrl: './upcoming-events.component.css'
+  styleUrl: './upcoming-events.component.css',
 })
 export class UpcomingEventsComponent implements OnInit {
-  blogPosts = []
+  blogPosts = [];
   // blogPosts = [
   //   {
   //     imgSrc: 'assets/img/blog-img4.jpg',
@@ -40,7 +40,7 @@ export class UpcomingEventsComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.equalizerAnimation('.equalizer', 180, this.barsHeight);
+    // this.equalizerAnimation('.equalizer', 180, this.barsHeight);
   }
 
   randomBetween(min: number, max: number): number {
@@ -50,7 +50,7 @@ export class UpcomingEventsComponent implements OnInit {
   equalizerAnimation(
     selector: string,
     speed: number,
-    barsHeight: number[][]
+    barsHeight: number[][],
   ): void {
     const equalizer = document.querySelector(selector);
     if (!equalizer) return;
@@ -62,7 +62,7 @@ export class UpcomingEventsComponent implements OnInit {
       spans.forEach((span, idx) => {
         const height = this.randomBetween(
           barsHeight[idx][0],
-          barsHeight[idx][1]
+          barsHeight[idx][1],
         );
         (span as HTMLElement).style.height = `${height}px`;
       });
@@ -106,5 +106,4 @@ export class UpcomingEventsComponent implements OnInit {
       this.equalizerAnimation('.equalizer', 180, this.barsHeight);
     }
   }
-
 }
