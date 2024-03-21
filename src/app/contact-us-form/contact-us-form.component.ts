@@ -1,8 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule, Validators,} from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-us-form',
@@ -25,16 +31,18 @@ export class ContactUsFormComponent implements OnInit {
     query: new FormControl('', [Validators.required]),
   });
 
-  constructor(private snackBar: MatSnackBar) {
-  }
+  constructor(
+    private snackBar: MatSnackBar,
+    private router: Router,
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   submitForm(): void {
     const formData = this.getInTouchFormGroup.value;
     const formDataJson = JSON.parse(JSON.stringify(formData));
     console.log(formDataJson);
-    this.snackBar.open('Form submitted sucessfully', 'OK', {duration: 3000});
+    this.snackBar.open('Form submitted sucessfully', 'OK', { duration: 3000 });
+    this.router.navigate(['thank-you-page']);
   }
 }

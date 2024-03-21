@@ -1,9 +1,16 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators,} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-get-in-touch-form',
@@ -28,16 +35,18 @@ export class GetInTouchFormComponent implements OnInit {
     query: new FormControl('', [Validators.required]),
   });
 
-  constructor(private snackBar: MatSnackBar) {
-  }
+  constructor(
+    private snackBar: MatSnackBar,
+    private router: Router,
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit(): void {
     const formData = this.getInTouchFormGroup.value;
     const formDataJson = JSON.parse(JSON.stringify(formData));
-    this.snackBar.open('Form Submited Succesfully', 'OK', {duration: 3000});
+    this.snackBar.open('Form Submited Succesfully', 'OK', { duration: 3000 });
+    this.router.navigate(['thank-you-page']);
     console.log(formDataJson);
   }
 }

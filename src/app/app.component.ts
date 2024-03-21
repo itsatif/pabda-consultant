@@ -24,19 +24,15 @@ export class AppComponent implements OnInit {
     @Inject(PLATFORM_ID) private platformId: Object,
     private elementRef: ElementRef,
     private router: Router,
-  ) {
-    this.router.events.subscribe((event): void => {
-      if (
-        event instanceof NavigationEnd &&
-        this.elementRef?.nativeElement?.ownerDocument?.defaultView
-      ) {
-        this.scrollToTop();
-      }
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
+      this.router.events.subscribe((event): void => {
+        if (event instanceof NavigationEnd) {
+          this.scrollToTop();
+        }
+      });
     }
   }
 

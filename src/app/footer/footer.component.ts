@@ -3,7 +3,7 @@ import { GetInTouchFormComponent } from '../get-in-touch-form/get-in-touch-form.
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -27,7 +27,10 @@ export class FooterComponent {
     query: '',
   };
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(
+    private snackBar: MatSnackBar,
+    private router: Router,
+  ) {}
 
   submitForm(form: NgForm) {
     if (form.valid) {
@@ -35,6 +38,7 @@ export class FooterComponent {
       this.snackBar.open('Your Form has successfully submitted', 'OK', {
         duration: 3000,
       });
+      this.router.navigate(['thank-you-page']);
     } else {
       this.snackBar.open('Please fill all the details in form', 'OK', {
         duration: 3000,

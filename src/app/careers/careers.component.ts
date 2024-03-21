@@ -1,13 +1,20 @@
-import {Component} from '@angular/core';
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { Component } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-careers',
   standalone: true,
   imports: [ReactiveFormsModule, FormsModule, MatSnackBarModule],
   templateUrl: './careers.component.html',
-  styleUrl: './careers.component.css'
+  styleUrl: './careers.component.css',
 })
 export class CareersComponent {
   careerFormGroup: FormGroup = new FormGroup({
@@ -20,16 +27,19 @@ export class CareersComponent {
     linkedinProfile: new FormControl('', Validators.required),
     whyJoin: new FormControl('', Validators.required),
     message: new FormControl(''),
-    resume: new FormControl('')
+    resume: new FormControl(''),
   });
 
-  constructor(private snackBar: MatSnackBar) {
-  }
+  constructor(
+    private snackBar: MatSnackBar,
+    private router: Router,
+  ) {}
 
   onSubmit(): void {
     const formData = this.careerFormGroup.value;
-    this.snackBar.open('Form Submitted Successfully', 'OK', {duration: 3000})
+    this.snackBar.open('Form Submitted Successfully', 'OK', { duration: 3000 });
     const form = new FormData(formData);
-    console.log(form)
+    this.router.navigate(['thank-you-page']);
+    console.log(form);
   }
 }
