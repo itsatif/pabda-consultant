@@ -1,11 +1,19 @@
-import {AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, Renderer2, ViewChild,} from '@angular/core';
-import {CarouselModule} from 'ngx-owl-carousel-o';
-import {BlogGridComponent} from '../blog-grid/blog-grid.component';
-import {WowService} from '../shared-services/wow.service';
-import {HapticFeedbackDirective} from '../../directives/haptic-feedback.directive';
-import {interval, takeWhile} from 'rxjs';
-import {RouterLink} from '@angular/router';
-import {isPlatformBrowser} from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Inject,
+  PLATFORM_ID,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BlogGridComponent } from '../blog-grid/blog-grid.component';
+import { WowService } from '../shared-services/wow.service';
+import { HapticFeedbackDirective } from '../../directives/haptic-feedback.directive';
+import { interval, takeWhile } from 'rxjs';
+import { RouterLink } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 declare var $: any;
 
@@ -25,10 +33,10 @@ export class HomeComponent implements AfterViewInit {
   isSoundOn: boolean = false;
   source: AudioBufferSourceNode | null = null;
   counters: any[] = [
-    {business: 1, max: 50},
-    {happyClients: 1, max: 100},
-    {respondents: 1, max: 8},
-    {surveys: 1, max: 6},
+    { business: 1, max: 50 },
+    { happyClients: 1, max: 100 },
+    { respondents: 1, max: 8 },
+    { surveys: 1, max: 6 },
   ];
 
   barsHeight = [
@@ -45,9 +53,8 @@ export class HomeComponent implements AfterViewInit {
   constructor(
     @Inject(WowService) private wowService: WowService,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private renderer: Renderer2
-  ) {
-  }
+    private renderer: Renderer2,
+  ) {}
 
   ngAfterViewInit(): void {
     this.wowService.initWow();
@@ -55,6 +62,9 @@ export class HomeComponent implements AfterViewInit {
       this.initializeOwlCarousel();
       this.playOSSound();
       this.equalizerAnimation('.equalizer', 180, this.barsHeight);
+      setTimeout((): void => {
+        this.playOSSound();
+      }, 2000);
     }
   }
 
@@ -84,7 +94,7 @@ export class HomeComponent implements AfterViewInit {
   equalizerAnimation(
     selector: string,
     speed: number,
-    barsHeight: number[][]
+    barsHeight: number[][],
   ): void {
     const equalizer = document.querySelector(selector);
     if (!equalizer) return;

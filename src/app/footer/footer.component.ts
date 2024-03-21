@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
-import {GetInTouchFormComponent} from '../get-in-touch-form/get-in-touch-form.component';
-import {FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
-import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { Component } from '@angular/core';
+import { GetInTouchFormComponent } from '../get-in-touch-form/get-in-touch-form.component';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -13,6 +14,7 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
     CommonModule,
     GetInTouchFormComponent,
     MatSnackBarModule,
+    RouterLink,
   ],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
@@ -25,8 +27,7 @@ export class FooterComponent {
     query: '',
   };
 
-  constructor(private snackBar: MatSnackBar) {
-  }
+  constructor(private snackBar: MatSnackBar) {}
 
   submitForm(form: NgForm) {
     if (form.valid) {
