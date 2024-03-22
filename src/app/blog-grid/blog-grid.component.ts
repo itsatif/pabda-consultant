@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { convertIso8601ToLocalDate } from '../../utils/common.utils';
 
 @Component({
   selector: 'app-blog-grid',
@@ -257,7 +256,30 @@ export class BlogGridComponent {
     return intro.length > 50 ? intro.slice(0, 100) + '...' : intro;
   }
 
+  formatDate(inputDate) {
+    const months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+    const date = new Date(inputDate);
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
+
+    return `${day}-${month}-${year}`;
+  }
+
   transformDate(date: any): string {
-    return convertIso8601ToLocalDate(date);
+    return this.formatDate(date);
   }
 }
