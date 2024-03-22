@@ -1,6 +1,9 @@
 <section
-  [ngStyle]="{ 'background-image': 'url(assets/img/' + selectedSlug + '.jpg' + ')' }"
-  class="breadcumb-area bg-img">
+  [ngStyle]="{
+    'background-image': 'url(assets/img/' + selectedSlug + '.jpg' + ')'
+  }"
+  class="breadcumb-area bg-img"
+>
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-12">
@@ -24,7 +27,7 @@
       <div class="product-cat">
         <div class="row">
           <div class="col-md-8 col-md-push-4">
-            <ng-container *ngIf="(service$ | async) as service">
+            <ng-container *ngIf="service$ | async as service">
               <div class="service-detail">
                 <div class="ser-des">
                   <ng-container *ngIf="service.isVideo; else imgTemplate">
@@ -35,29 +38,42 @@
                       playsinline=""
                       preload="metadata"
                       style="
-          width: 100%;
-          height: 100%;
-          margin-top: 10px;
-          border: 8px solid #c6d4d7;
-          border-radius: 40px 0;
-          object-fit: fill;
-        "
+                        width: 100%;
+                        height: 100%;
+                        margin-top: 10px;
+                        border: 8px solid #c6d4d7;
+                        border-radius: 40px 0;
+                        object-fit: fill;
+                      "
                     >
-                      <source [src]="service.videoSrc" type="video/mp4"/>
+                      <source [src]="service.videoSrc" type="video/mp4" />
                     </video>
                   </ng-container>
                   <ng-template #imgTemplate>
-                    <img [src]="service.videoSrc" alt="Image"
-                         style="width: 100%; height: 100%; margin-top: 10px; border: 8px solid #c6d4d7; border-radius: 40px 0; object-fit: fill;">
+                    <img
+                      [src]="service.videoSrc"
+                      alt="Image"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        margin-top: 10px;
+                        border: 8px solid #c6d4d7;
+                        border-radius: 40px 0;
+                        object-fit: fill;
+                      "
+                    />
                   </ng-template>
                   <h2>{{ service.title }}</h2>
-                  <ng-container *ngFor="let paragraph of (service.description | objectToArray)">
+                  <ng-container
+                    *ngFor="
+                      let paragraph of service.description | objectToArray
+                    "
+                  >
                     <p>{{ paragraph }}</p>
                   </ng-container>
                 </div>
               </div>
             </ng-container>
-
           </div>
           <div class="col-md-4 col-md-pull-8">
             <div class="sidebar-cate_list sticky">
@@ -68,35 +84,57 @@
               >
                 <h3>Our Services</h3>
                 <ul>
-                  <li [ngClass]="{ 'active': isLinkActive('market-research') }">
-                    <a href="/service-details/market-research">Market Research</a>
+                  <li [ngClass]="{ active: isLinkActive('market-research') }">
+                    <a href="/service-details/market-research"
+                      >Market Research</a
+                    >
                   </li>
-                  <li [ngClass]="{ 'active': isLinkActive('questionnaire-designing') }">
-                    <a href="/service-details/questionnaire-designing">Questionnaire Designing</a>
+                  <li
+                    [ngClass]="{
+                      active: isLinkActive('questionnaire-designing')
+                    }"
+                  >
+                    <a href="/service-details/questionnaire-designing"
+                      >Questionnaire Designing</a
+                    >
                   </li>
-                  <li [ngClass]="{ 'active': isLinkActive('survey-programming') }">
-                    <a href="/service-details/survey-programming">Survey Programming</a>
+                  <li
+                    [ngClass]="{ active: isLinkActive('survey-programming') }"
+                  >
+                    <a href="/service-details/survey-programming"
+                      >Survey Programming</a
+                    >
                   </li>
-                  <li [ngClass]="{ 'active': isLinkActive('data-processing') }">
-                    <a href="/service-details/data-processing">Data Processing</a>
+                  <li [ngClass]="{ active: isLinkActive('data-processing') }">
+                    <a href="/service-details/data-processing"
+                      >Data Processing</a
+                    >
                   </li>
-                  <li [ngClass]="{ 'active': isLinkActive('industries-reach') }">
-                    <a href="/service-details/industries-reach">Industries Reach</a>
+                  <li [ngClass]="{ active: isLinkActive('industries-reach') }">
+                    <a href="/service-details/industries-reach"
+                      >Industries Reach</a
+                    >
                   </li>
-                  <li [ngClass]="{ 'active': isLinkActive('respondent-reach') }">
-                    <a href="/service-details/respondent-reach">Respondent Reach</a>
+                  <li [ngClass]="{ active: isLinkActive('respondent-reach') }">
+                    <a href="/service-details/respondent-reach"
+                      >Respondent Reach</a
+                    >
                   </li>
-                  <li [ngClass]="{ 'active': isLinkActive('cati') }">
+                  <li [ngClass]="{ active: isLinkActive('cati') }">
                     <a href="/service-details/cati">CATI</a>
                   </li>
-                  <li [ngClass]="{ 'active': isLinkActive('cawi-online') }">
+                  <li [ngClass]="{ active: isLinkActive('cawi-online') }">
                     <a href="/service-details/cawi-online">CAWI/Online</a>
                   </li>
-                  <li [ngClass]="{ 'active': isLinkActive('face-to-face') }">
+                  <li [ngClass]="{ active: isLinkActive('face-to-face') }">
                     <a href="/service-details/face-to-face">Face to Face</a>
                   </li>
-                  <li [ngClass]="{ 'active': isLinkActive('in-depth-discussions') }">
-                    <a href="/service-details/in-depth-discussions">In-depth Discussions</a>
+                  <li
+                    [ngClass]="{ active: isLinkActive('in-depth-discussions') }"
+                  >
+                    <a href="/service-details/in-depth-discussions"
+                      >In-depth Discussions</a
+                    >
                   </li>
                 </ul>
                 <div class="faq-page__right">
@@ -120,17 +158,17 @@
                         If you need any helps, please feel free to contact us.
                       </h6>
                       <p>
-                        <a href="tel:123456789 "
-                        ><i aria-hidden="true" class="fa fa-phone frr-ic"></i>
-                          123456789</a
-                        >
+                        <!--                        <a href="tel:123456789 "-->
+                        <!--                        ><i aria-hidden="true" class="fa fa-phone frr-ic"></i>-->
+                        <!--                          123456789</a-->
+                        <!--                        >-->
                       </p>
                       <p>
                         <a href="mailto: sales@pabdaconsulting.com   "
-                        ><i
-                          aria-hidden="true"
-                          class="fa fa-envelope sdr-ics"
-                        ></i>
+                          ><i
+                            aria-hidden="true"
+                            class="fa fa-envelope sdr-ics"
+                          ></i>
                           sales&#64;pabdaconsulting.com
                         </a>
                       </p>
@@ -148,4 +186,3 @@
     </div>
   </div>
 </div>
-
