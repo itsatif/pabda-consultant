@@ -18,7 +18,7 @@ import { FooterComponent } from './footer/footer.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  title = 'pabda-consultant';
+  title = 'pabda-consulting';
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
