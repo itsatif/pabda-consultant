@@ -41,6 +41,9 @@
                     href="https://youtube.com/@PabdaConsulting?si=5myVCWBpUcclMB37"
                     ><i aria-hidden="true" class="fa fa-brands fa-youtube"></i>
                   </a>
+                  <a href="https://www.linkedin.com/company/pabdaconsulting"
+                    ><i aria-hidden="true" class="fa fa-brands fa-linkedin"></i>
+                  </a>
                 </h6>
               </div>
             </div>
@@ -150,14 +153,13 @@
   </div>
 
   <!-- Copywrite Text -->
-  <div
-    *ngIf="false"
-    class="copywrite-text d-flex align-items-center justify-content-center"
-  >
+  <div class="copywrite-text d-flex align-items-center justify-content-center">
     <p>
-      Copyright © 2024 PABDA Consulting All rights reserved | Designed and
-      Developed by
-      <a href="https://brandhype.in/" target="_blank">Brandhype.in</a>
+      Copyright © 2024 PABDA Consulting All rights reserved
+      <span *ngIf="false">| Designed and Developed by</span>
+      <a *ngIf="false" href="https://brandhype.in/" target="_blank"
+        >Brandhype.in</a
+      >
     </p>
   </div>
 </footer>
