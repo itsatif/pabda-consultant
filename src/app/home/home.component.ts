@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   Inject,
+  OnDestroy,
   PLATFORM_ID,
   Renderer2,
   ViewChild,
@@ -29,7 +30,7 @@ declare var $: any;
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnDestroy {
   isSoundOn: boolean = false;
   source: AudioBufferSourceNode | null = null;
   counters: any[] = [
@@ -197,5 +198,12 @@ export class HomeComponent implements AfterViewInit {
         }, 2000);
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.isSoundOn = false;
+      this.playOSSound();
+    }
   }
 }

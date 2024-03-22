@@ -1,24 +1,24 @@
-import {CommonModule} from '@angular/common';
-import {Component} from '@angular/core';
-import {convertIso8601ToLocalDate} from '../../utils/common.utils';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { convertIso8601ToLocalDate } from '../../utils/common.utils';
 
 @Component({
   selector: 'app-blog-grid',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './blog-grid.component.html',
-  styleUrl: './blog-grid.component.css'
+  styleUrl: './blog-grid.component.css',
 })
 export class BlogGridComponent {
-
   blogData = [
     {
       id: 1,
       date: '2023-12-08T09:00:38.119Z',
-      imgSrc: 'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-2.jpg',
-      slug: "strategies-for-expanding-your-businesss-industries-reach-and-breaking-barriers",
+      imgSrc:
+        'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-2.jpg',
+      slug: 'strategies-for-expanding-your-businesss-industries-reach-and-breaking-barriers',
       content: `<div class="blog-image">
-  <img class="img-responsive" src="http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-2.jpg" />
+  <img class="img-responsive" src="assets/img/blog-2.jpg" />
 </div>
 
 <h3>
@@ -123,10 +123,11 @@ export class BlogGridComponent {
     {
       id: 2,
       date: '2024-01-12T09:00:38.119Z',
-      imgSrc: 'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-3.jpg',
-      slug: "a-guide-to-effective-survey-programming-to-navigate-the-digital-space",
+      imgSrc:
+        'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-3.jpg',
+      slug: 'a-guide-to-effective-survey-programming-to-navigate-the-digital-space',
       content: `<div class="blog-image">
-      <img class="img-responsive" src="http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-3.jpg" />
+      <img class="img-responsive" src="assets/img/blog-3.jpg" />
     </div>
 
     <h3>
@@ -178,15 +179,16 @@ export class BlogGridComponent {
     <p>Effective survey programming is key to digital survey performance. Researchers and enterprises may optimize data collection using user-friendly design, dynamic logic, data security, and continuous monitoring. Staying current with technology and adding new features will help create surveys that provide valuable insights in the digital age.</p>
 
     <p>Using these basic practices improves data quality and makes survey participants happier. In an information-rich world, well-executed survey programming is essential for extracting insights that influence decision-making and boost research and commercial performance in the digital age.</p>
-    `
+    `,
     },
     {
       id: 3,
       date: '2024-02-07T09:00:38.119Z',
-      imgSrc: 'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-1.jpg',
-      slug: "what-impact-does-comprehensive-market-research-have-on-decision-making",
+      imgSrc:
+        'http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-1.jpg',
+      slug: 'what-impact-does-comprehensive-market-research-have-on-decision-making',
       content: `<div class="blog-image">
-      <img class="img-responsive" src="http://brandhypedigital.co.in/brandhype1-2022/Pabda-Consulting/img/blog-1.jpg" />
+      <img class="img-responsive" src="assets/img/blog-1.jpg" />
     </div>
       <h3>What Impact Does Comprehensive Market Research Have on Decision-Making?</h3>
 
@@ -245,8 +247,8 @@ export class BlogGridComponent {
       <p>
         Market research is executed to understand the desires of the customers. Entrepreneurs can not build a customer-centric business if they do not understand their target audience. It is sure to fail. Conducting thorough market research with the help of Pabda Consulting will open doors to appeal to the preferences & dislikes of the customers. Market research data is like a compass, steering the company to make informed decisions to reach its goal of retaining its potential customers.
       </p>
-      `
-    }
+      `,
+    },
   ];
 
   extractTitle(content: string): string {
