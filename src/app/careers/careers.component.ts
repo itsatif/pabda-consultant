@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { FormService } from '../get-in-touch-form/form.service';
 
 @Component({
   selector: 'app-careers',
@@ -33,12 +34,15 @@ export class CareersComponent {
   constructor(
     private snackBar: MatSnackBar,
     private router: Router,
+    private formService: FormService,
   ) {}
 
   onSubmit(): void {
     const formData = this.careerFormGroup.value;
     this.snackBar.open('Form Submitted Successfully', 'OK', { duration: 3000 });
     const form = new FormData(formData);
+    const formDataJson = JSON.parse(JSON.stringify(formData));
+    this.formService.submitForm(formDataJson).subscribe();
     this.router.navigate(['thank-you-page']);
     console.log(form);
   }

@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { FormService } from '../get-in-touch-form/form.service';
 
 @Component({
   selector: 'app-contact-us-form',
@@ -34,6 +35,7 @@ export class ContactUsFormComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     private router: Router,
+    private formService: FormService,
   ) {}
 
   ngOnInit(): void {}
@@ -42,6 +44,7 @@ export class ContactUsFormComponent implements OnInit {
     const formData = this.getInTouchFormGroup.value;
     const formDataJson = JSON.parse(JSON.stringify(formData));
     console.log(formDataJson);
+    this.formService.submitForm(formDataJson).subscribe();
     this.snackBar.open('Form submitted sucessfully', 'OK', { duration: 3000 });
     this.router.navigate(['thank-you-page']);
   }
