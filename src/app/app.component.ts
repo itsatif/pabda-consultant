@@ -9,11 +9,20 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormService } from './get-in-touch-form/form.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent,
+    HttpClientModule,
+  ],
+  providers: [HttpClientModule, FormService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { FormService } from './form.service';
 
 @Component({
   selector: 'app-get-in-touch-form',
@@ -38,6 +39,7 @@ export class GetInTouchFormComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     private router: Router,
+    private formService: FormService,
   ) {}
 
   ngOnInit(): void {}
@@ -46,6 +48,7 @@ export class GetInTouchFormComponent implements OnInit {
     const formData = this.getInTouchFormGroup.value;
     const formDataJson = JSON.parse(JSON.stringify(formData));
     this.snackBar.open('Form Submited Succesfully', 'OK', { duration: 3000 });
+    this.formService.submitForm(formDataJson).subscribe();
     this.router.navigate(['thank-you-page']);
     console.log(formDataJson);
   }

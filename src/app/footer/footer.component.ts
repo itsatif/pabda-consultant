@@ -4,6 +4,8 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Router, RouterLink } from '@angular/router';
+import { FormService } from '../get-in-touch-form/form.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-footer',
@@ -15,6 +17,7 @@ import { Router, RouterLink } from '@angular/router';
     GetInTouchFormComponent,
     MatSnackBarModule,
     RouterLink,
+    HttpClientModule,
   ],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
@@ -30,11 +33,14 @@ export class FooterComponent {
   constructor(
     private snackBar: MatSnackBar,
     private router: Router,
+    private formService: FormService,
   ) {}
 
   submitForm(form: NgForm) {
     if (form.valid) {
       console.log('Form submitted:', this.formData);
+      const formDataJson = JSON.parse(JSON.stringify(this.formData));
+      this.formService.submitForm(formDataJson).subscribe();
       this.snackBar.open('Your Form has successfully submitted', 'OK', {
         duration: 3000,
       });
