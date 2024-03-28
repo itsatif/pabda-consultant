@@ -582,8 +582,19 @@
     </div>
   </div>
 </div>
-<div (click)="playOSSound()" class="sound">
-  <span>Sound</span>
+<div
+  (click)="playOSSound()"
+  class="sound"
+  style="
+    position: fixed;
+    background: #fff;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+  "
+>
+  <span style="color: #000">Sound</span>
   <div class="equalizer">
     <span></span> <span></span> <span></span> <span></span>
   </div>
