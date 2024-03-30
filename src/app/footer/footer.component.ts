@@ -40,7 +40,7 @@ export class FooterComponent {
     if (form.valid) {
       console.log('Form submitted:', this.formData);
       const formDataJson = JSON.parse(JSON.stringify(this.formData));
-      this.formService.submitForm(formDataJson).subscribe();
+      this.formService.submitContactQuery(formDataJson).subscribe();
       this.snackBar.open('Your Form has successfully submitted', 'OK', {
         duration: 3000,
       });

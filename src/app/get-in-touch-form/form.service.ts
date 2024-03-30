@@ -19,4 +19,17 @@ export class FormService {
       queryObj,
     );
   }
+
+  submitCareerQuery(formData: FormData) {
+    return this.http.post(
+      'https://pabdaconsulting.com/api/v1/user/career/query',
+      formData,
+    );
+  }
+
+  submitContactQuery(contactData: any) {
+    const apiUrl = 'https://pabdaconsulting.com/api/v1/user/contact/query';
+
+    return this.http.post(apiUrl, contactData);
+  }
 }

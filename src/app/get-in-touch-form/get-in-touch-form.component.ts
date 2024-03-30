@@ -48,7 +48,7 @@ export class GetInTouchFormComponent implements OnInit {
     const formData = this.getInTouchFormGroup.value;
     const formDataJson = JSON.parse(JSON.stringify(formData));
     this.snackBar.open('Form Submited Succesfully', 'OK', { duration: 3000 });
-    this.formService.submitForm(formDataJson).subscribe();
+    this.formService.submitContactQuery(formDataJson).subscribe();
     this.router.navigate(['thank-you-page']);
     console.log(formDataJson);
   }

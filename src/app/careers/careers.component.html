@@ -194,11 +194,12 @@
             <div class="form-group">
               <label>Upload Resume</label>
               <input
-                accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.ppt,.pptx,.odt,.avi,.ogg,.m4a,.mov,.mp3,.mp4,.mpg,.wav,.wmv"
+                (change)="onFileSelected($event)"
+                accept=".pdf,.doc,.docx"
                 aria-invalid="false"
                 aria-required="true"
                 class="form-control sdr-frs brow"
-                formControlName="resume"
+                formControlName="file"
                 name="file-880"
                 size="5000"
                 type="file"
