@@ -20,7 +20,7 @@ export class BlogGridComponent {
 </div>
 
 <h3>
-  Strategies For Expanding Your Business's Industries Reach And
+  Strategies for expanding your business's Industries Reach And
   Breaking Barriers
 </h3>
 <p>
@@ -32,7 +32,7 @@ export class BlogGridComponent {
   understanding of the risks will lead to successful growth for
   breaking barriers.
 </p>
-<h4>What Do You Mean By Business Expansion?</h4>
+<h4>What do you mean by Business Expansion?</h4>
 <p>
   Business expansion strategically means the growth of a business to
   a point with additional options for generating more revenue. When
@@ -58,7 +58,7 @@ export class BlogGridComponent {
   expansion, the presence of the right tools is necessary to
   transform the goals of the business into a reality.
 </p>
-<h4>Why The Need For Strategic Planning?</h4>
+<h4>Why the need For Strategic Planning?</h4>
 <p>
   There are abundant reasons why small businesses face the harsh
   reality of failure to create a presence in the competitive market.
@@ -128,7 +128,7 @@ export class BlogGridComponent {
     </div>
 
     <h3>
-      A Guide to Effective Survey Programming to Navigate the Digital Space
+      A guide to effective survey programming to navigate the Digital space
     </h3>
 
     <p>

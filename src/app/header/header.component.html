@@ -16,7 +16,7 @@
       <li><a href="client-we-serve">Clients We Serve</a></li>
       <li>
         <a class="feat-btn" href="service-listing"
-        >Services
+          >Services
           <span
             (click)="
               $event.stopPropagation(); $event.preventDefault(); openNavList(0)
@@ -34,12 +34,26 @@
           [ngClass]="{ show: isNavList && isNavList[0] }"
           class="feat-show"
         >
-          <li><a href="/service-details/market-research">Market Research</a></li>
-          <li><a href="/service-details/questionnaire-designing">Questionnaire Designing </a></li>
-          <li><a href="/service-details/survey-programming">Survey Programming</a></li>
-          <li><a href="/service-details/data-processing">Data Processing</a></li>
-          <li><a href="/service-details/industries-reach">Industries Reach</a></li>
-          <li><a href="/service-details/respondent-reach">Respondent Reach</a></li>
+          <li>
+            <a href="/service-details/market-research">Market Research</a>
+          </li>
+          <li>
+            <a href="/service-details/questionnaire-designing"
+              >Questionnaire Designing
+            </a>
+          </li>
+          <li>
+            <a href="/service-details/survey-programming">Survey Programming</a>
+          </li>
+          <li>
+            <a href="/service-details/data-processing">Data Processing</a>
+          </li>
+          <li>
+            <a href="/service-details/industries-reach">Industries Reach</a>
+          </li>
+          <li>
+            <a href="/service-details/respondent-reach">Respondent Reach</a>
+          </li>
           <li>
             <a
               (click)="
@@ -48,7 +62,7 @@
                 openNavList(1)
               "
               class="feat-btns"
-            >FieldWork
+              >Field Work
               <span
                 (click)="
                   $event.stopPropagation();
@@ -67,14 +81,18 @@
               <li><a href="/service-details/cati">Cati</a></li>
               <li><a href="/service-details/cawi-online">CAWI/Online</a></li>
               <li><a href="/service-details/face-to-face">Face to Face </a></li>
-              <li><a href="/service-details/in-depth-discussions"> In-depth Discussions</a></li>
+              <li>
+                <a href="/service-details/in-depth-discussions">
+                  In-depth Discussions</a
+                >
+              </li>
             </ul>
           </li>
         </ul>
       </li>
       <li>
         <a class="serv-btn" href="#"
-        >Resource Center
+          >Resource Center
           <span
             (click)="
               $event.stopPropagation(); $event.preventDefault(); openNavList(2)
@@ -98,7 +116,7 @@
   </nav>
   <div class="logo top-ll">
     <a class="nav-brand" href="/"
-    ><img alt="" src="assets/img/new-logo-1.png"
+      ><img alt="" src="assets/img/new-logo-1.png"
     /></a>
   </div>
 </header>
