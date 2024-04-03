@@ -20,8 +20,8 @@ export class BlogGridComponent {
 </div>
 
 <h3>
-  Strategies for expanding your business's Industries Reach And
-  Breaking Barriers
+  Strategies for expanding your business's industries reach and
+  breaking barriers
 </h3>
 <p>
   Every entrepreneur wants to expand their business and reach a
@@ -128,7 +128,7 @@ export class BlogGridComponent {
     </div>
 
     <h3>
-      A guide to effective survey programming to navigate the Digital space
+      A guide to effective survey programming to navigate the digital space
     </h3>
 
     <p>
@@ -186,7 +186,7 @@ export class BlogGridComponent {
       content: `<div class="blog-image">
       <img class="img-responsive" src="assets/img/blog-1.jpg" />
     </div>
-      <h3>What Impact Does Comprehensive Market Research Have on Decision-Making?</h3>
+      <h3>What impact does comprehensive market research have on decision-making?</h3>
 
       <p>
         Comprehensive Market research is a key component of achieving success. Surveys are one of the popular means of reaching potential targets. Surveys help to gain insight into the preferences and opinions of the customers. Without thorough market research, businesses will fail to create a connection with customers and miss growth opportunities. The entrepreneurs would make poor business decisions, and ultimately lose customers. Market research can help to scale your business to a new level. Market research needs finance, time, and effort to get a positive outcome.  Comprehensive market research is an indispensable part of running a successful business.
